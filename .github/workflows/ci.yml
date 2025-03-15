@@ -5,6 +5,8 @@ on:
       - master 
       - main
   workflow_dispatch: {}
+  repository_dispatch:
+    types: [theme-dispatch]
 permissions:
   contents: write
   pages: write
