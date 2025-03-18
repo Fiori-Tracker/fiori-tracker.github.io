@@ -4,6 +4,6 @@ Fiori Tracker Core has only one transport. The simplest deployment option used t
 
 The only product that you need to install is:
 
-1. Fiori Tracker Core - [see installation steps](inst.md)
+1. Fiori Tracker Core
 
 [![](res/eval-dep.png)](res/eval-dep.png)
