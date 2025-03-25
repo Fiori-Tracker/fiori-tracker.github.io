@@ -90,4 +90,4 @@ Below is the description of what we need:
 
 Here is an example of such an article for one customer:
 
-- [Maersk SAP team sharpens its game plan with Fiori Tracker](https://fioritracker.org/customer-pending/Maersk/011-Maersk/)
+- [Maersk SAP team sharpens its game plan with Fiori Tracker](customer-references/posts/Maersk/011-Maersk.md)
