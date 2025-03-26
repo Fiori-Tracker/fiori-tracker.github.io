@@ -187,9 +187,13 @@ plugins:
         '2020FPS01/index.md': 'index.md'
         'installation.md': 'index.md'
   - exporter:
+      theme: material
       formats:
          pdf:
            explicit: true
+           aggregator:
+             enabled: true
+           concurrency: 32
   - custom_social_logo
   - custom_redirects
   - sap_icons
