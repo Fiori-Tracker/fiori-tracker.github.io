@@ -196,6 +196,11 @@ plugins:
            aggregator:
              enabled: true
            concurrency: 32
+           stylesheets:
+             - resources/stylesheets/pdf.scss
+           covers:
+             front: resources/templates/covers/front.html.j2
+             back: resources/templates/covers/back.html.j2
   - custom_social_logo
   - custom_redirects
   - sap_icons
