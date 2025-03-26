@@ -1,0 +1,824 @@
+site_name: Fiori Tracker
+site_url: https://fioritracker.org
+site_description: 'Fiori Tracker simplifies SAP Fiori app management. Centralized platform for collaborating on requirements.'
+nav:
+  - Customer references:
+    - customer-references/index.md
+  - Customer list: 
+    - customer-list/index.md
+  - Use cases:
+    - usecases/index.md
+  - Features: 
+    - features/index.md
+    - App usage report: features/usage-report.md
+    - User usage report: features/user-usage-report.md
+    - Usage log: features/usage-log.md
+    - Specifying apps: features/specifying-apps.md
+    - Specifying catalogs: features/specifying-catalogs.md
+    - Mapping apps to a catalog: features/mapping-apps-to-a-catalog.md
+
+  - Explore Details: 
+    - explore-fiori-tracker-details/index.md
+    - Satisfied Interests and Roles: satisfied-interests-and-roles.md
+    - Tracked content: tracked.md
+    - Components: fiori-tracker-suite-application-list.md
+    - Frequently Asked Questions: faq.md
+    - Installation: inst.md
+    - Support: support.md
+    - Philosophy: philosophy.md  
+    - History: history.md
+  - Executive Summary: 
+    - executive-summary/index.md
+    - Satisfied Interests and Roles: satisfied-interests-and-roles.md
+    - Philosophy: philosophy.md  
+    - History: history.md
+
+# Explicitly confirm there is awareness of files not in nav
+not_in_nav: |
+  /index.md
+  /*/
+  /as-is.md
+  /bugs-ideas.md
+  /com.md
+  /fiori-tracker-suite-application-list.md
+  /contact.md
+  /contact-success.md
+  /faq.md
+  /free-offer.md
+  /get-for-free.md
+  /info-records.md
+  /info.md
+  /offer.md
+  /premier.md
+  /satisfied-interests-and-roles.md
+  /tracked.md
+  /ui5lib-options.md
+  /usecases.md
+  /full-install.md
+  /sap-fiori-test-users.md
+  /advocate-invitation.md
+  /for-functional-experts.md
+  /customer-reference-preparation.md
+  /FAU-plugin-install.md
+  /impressum.md
+  /specification-records.md
+
+# Together with --strict flag it allows to crash CI if an error occurs and prevent shipping broken sites
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn  # If needed change to 'relative_to_docs'
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn  # If needed change to 'relative_to_docs'
+    unrecognized_links: warn
+theme: 
+  name: nype
+  favicon: favicon.ico
+  logo: 'assets/images/logo.png'
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.expand
+  nype_config:
+    contact_form_action_hex: 6148523063484d364c79396d62334a74637935316269317a6447463061574d75593239744c325a76636d317a4c7a45354e6a6b31597a5268597a4e6d4e6a426b5954646b59325268595455304d4459334e32597a5a57517a4d47466d4e546c6a5a44513d
+    contact_form_email_hex: 5047456761484a6c5a6a306962574670624852764f6d6474514735775a53356a6253492b5a323141626e426c4c6d4e745043396850673d3d
+    more_favicons: true
+    safari_mask_color: '#08d1c7'
+    exclude_via_robots: |
+      /customer-pending/
+extra_css:
+  - assets/stylesheets/extra.css
+extra_javascript:
+  - assets/javascripts/extra.js
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - neoteroi.timeline
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+plugins:
+  - search
+  - macros:
+      on_error_fail: !ENV [CI, false]
+  - blog:
+      archive: false
+      blog_dir: usecases
+      post_url_format: "{slug}"
+      post_readtime: false
+      pagination: false
+      hide_read_more: true
+      hide_post_metadata: true
+      blog_cards: index-grouped-combo-a+all
+      blog_card_continues:
+        _default: Open {category} use case
+      blog_card_icons:
+        _default: material/file-document
+        # sap_icons plugin allows to use ext/ SAP icons
+        Customer Favorites: material/diamond-stone
+        Test management: material/magnify
+        Blueprinting: ext/newspaper
+        Governance: ext/company-view
+        Project management: ext/manager
+        Scope management: material/cash-fast
+        Support: ext/headset
+        Automation: ext/process
+        Security & Compliance: material/castle
+        DevOps and Release Management: material/infinity
+      categories_allowed:
+        - Customer Favorites
+        - Test management
+        - Security & Compliance
+        - Blueprinting
+        - Support
+        - Governance
+        - Scope management
+        - DevOps and Release Management
+        - Project management
+        - Automation
+
+  - blog:
+      archive_name: Annual recap
+      blog_dir: customer-list
+      post_url_format: "{slug}"
+      post_date_format: "yyyy MMMM"  # Due to the blog implementation the last instance sets this value globally, use `unique_blog_date` to mitigate this bug when needed
+      post_readtime: false
+      pagination: false
+      hide_read_more: true
+
+  - blog:
+      archive_name: Annual recap
+      blog_dir: customer-references
+      post_url_format: "{slug}"
+      post_date_format: "yyyy MMMM"  # Due to the blog implementation the last instance sets this value globally, use `unique_blog_date` to mitigate this bug when needed
+      post_readtime: false
+      pagination: false
+      hide_read_more: true
+  - social:
+      enabled: !ENV [CI, false]
+      cards_layout_options:
+        background_color: "#0d0d72"  # same color as the corner in the social_logo.png
+  - redirects:
+      # file redirects return a status 200 code, but redirect the page via <head> tags
+      # keep it for a few weeks to see if the online search results will change or if we 
+      # have to only use the 404.html page + JavaScript approach, even though robots don't run JS
+      redirect_maps:
+        '1909FPS03/index.md': 'index.md'
+        '1909SPS06/index.md': 'index.md'
+        '1909SPS08/index.md': 'index.md'
+        '2020/index.md': 'index.md'
+        '2020FPS01/index.md': 'index.md'
+        'installation.md': 'index.md'
+  - exporter:
+      formats:
+         pdf:
+           explicit: true
+  - custom_social_logo
+  - custom_redirects
+  - sap_icons
+  - latest_blog_posts
+  - custom_blog_categorization:
+      hook_blog_dir: customer-list
+      render_name: Industries
+      code_name: industries
+      url_format: industry/{slug}
+  - similar_blog_posts:
+      title: See also
+      hook_blog_dir: usecases
+      max_shown: 5
+  - server_redirects:
+      raw_redirects:
+        /V?2020/(.+): /$1
+        /nr/m001: https://fioritracker.org/inst/step-1/
+        /nr/m002: https://fioritracker.org/inst/step-2/
+        /nr/m003: https://fioritracker.org/inst/step-3/
+        /nr/m004: https://fioritracker.org/inst/step-4/
+        /nr/m005: https://fioritracker.org/ui5lib-options/
+
+copyright: Copyright &copy; {year} Nype
+extra:
+  analytics:
+    provider: google
+    property: G-3SXC9PW73K 
+  social:
+    - icon: ext/nype-logo
+      link: https://npe.cm/?ref=fioritracker
+    - icon: fontawesome/brands/linkedin-in
+      link: https://linkedin.com/company/fiori-tracker/
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/fioritracker
+    - icon: fontawesome/brands/youtube
+      link: hhttps://www.youtube.com/@fioritracker
+    - icon: fontawesome/brands/discord
+      link: https://npe.cm/discord
+      
+  prod:  
+    core:
+      name: 'Fiori Tracker Core'
+      desc: 'Applications and Catalogs "To-be" records and their association'
+      nameshort: 'Core'
+      main: '2020'
+      latestrel: 'SPS03'
+      cen: 'X'
+      man: ' '
+      rep: 'installation'
+      pay: 'free'
+      fnode: 'zftapps, zftcats'
+      odata: 'ZNYPECOR_SRV'
+      ro: 'ZNYPE_FTMAN, ZNYPE_FTMEM'
+    asisCen:
+      name: 'As-is main: API'
+      desc: 'Enables Managed systems data synchronization'
+      nameshort: 'As-is API'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: ' '
+      rep: 'asis-cen'
+      pay: 'free'
+      fnode: 'zftdc, zftsy'
+      odata: 'ZNYPEASISCEN_SRV'
+      ro: 'ZNYPE_ASISCEN'
+    asisMan:
+      name: 'As-is Connector'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: 'X'
+      rep: 'asis-man'
+      pay: 'free'
+    catAppRep:
+      name: 'Catalog and App reports'
+      desc: 'Catalog and Apps "As-is" records and their association'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: ' '
+      rep: 'catapprep'
+      pay: 'free'  
+      fnode: 'zftca'
+      odata: 'ZNYPECA_SRV'
+      ro: 'ZNYPE_CAMAN'
+    fr:
+      name: 'Fiori Role Testing'
+      nameshort: 'Fiori Role Testing'
+      desc: 'The app tracks role testing to maintain the quality of production deployment.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'fr'
+      pay: 'free'
+      fnode: 'znypeat'
+      odata: 'ZNYPEAT_SRV'
+      ro: 'ZNYPE_FRMAN'
+    cr:
+      name: 'Catalog Report'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: ' '
+      rep: 'cat-rep'
+      pay: 'free'
+    ac:
+      name: 'App Catalog Report'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ac'
+      pay: 'free'
+    ca:
+      name: 'Catalog App Report'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ca'
+      pay: 'free'
+    fa:
+      name: 'Fiori App Usage Report'
+      desc: 'Fiori App Usage Report is a component that enables collecting usage records.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'fa'
+      pay: 'paid'
+      fnode: 'zftappusagerep, zfaadmin, zftappusageplug, zfaul'
+      odata: 'ZNYPEFACEN_SRV, ZNYPEFAMAN_SRV'
+      ro: 'ZNYPE_FAMAN, ZNYPE_FAMEM'
+    fap:
+      name: 'Fiori App Usage Plugin'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: 'X'
+      rep: 'fap'
+      pay: 'paid'
+    ftCatsRelAppsAsis:
+      name: 'FT Catalogs Relation: Apps As-is'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'asis-cen'
+      pay: 'free'
+    ftAppsRelCatsAsis:
+      name: 'FT Apps Relation: Catalogs, As-is'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'asis-cen'
+      pay: 'free'
+    ftAppsRelAppsUsage:
+      name: 'FT Apps Relation: App Usage'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'fa'
+      pay: 'paid'
+    ch:
+      name: 'Change Requests'
+      desc: 'Change request records linked to catalogs and apps'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ch'
+      pay: 'free'
+      fnode: 'zftch'
+      odata: 'ZNYPECH_SRV'
+      ro: 'ZNYPE_CHMAN'      
+    RelCh:
+      name: 'FT Apps and Catalogs Relation: Change Requests'
+      desc: 'The Change Request relation shows a list of change requests linked to an application or catalog.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ch'
+      pay: 'free'  
+    so:
+      name: 'Sign-offs'
+      desc: 'The Sign-offs app lets you create, change and list sign-offs records linked to all content types (apps, catalogs and roles)'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'so'
+      pay: 'free'
+      fnode: 'zftso'
+      odata: 'ZNYPESO_SRV'
+      ro: 'ZNYPE_SOMAN'      
+    tu:
+      name: 'Test users'
+      nameshort: 'Test users'
+      desc: 'The Test users app lets you create, change, and list test user records.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'tu'
+      pay: 'free'
+      fnode: 'zftusers'
+      odata: 'ZNYPEUS_SRV'
+      ro: 'ZNYPE_USMAN'
+    RelTu:
+      name: 'FT Apps Relation: Test users'
+      desc: 'The Test users relation shows a list of test users linked to all apps'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'tu'
+      pay: 'free'      
+    hi:
+      name: 'History'
+      nameshort: 'History'
+      desc: 'The History component keeps the history records for SAP Fiori launchpad key deliverables: apps, catalogs, and roles.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'hi'
+      pay: 'free'
+      fnode: 'zfthi'
+      odata: 'ZNYPEHI_SRV'
+      ro: 'ZNYPE_HIMAN'
+    co:
+      name: 'Comments'
+      nameshort: 'Comments'
+      desc: 'The Comments component keeps the free text notes records for SAP Fiori launchpad key deliverables: apps, catalogs, and roles.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'co'
+      pay: 'free'
+      fnode: 'zftco'
+      odata: 'ZNYPECO_SRV'
+      ro: 'ZNYPE_COMAN'
+    RelSo:
+      name: 'FT Apps and Catalogs Relation: Sign-offs'
+      desc: 'The Sign-offs relation shows a list of sign-offs linked to all content types (apps, catalogs and roles)'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'so'
+      pay: 'free'
+    ro:
+      name: 'Fiori Tracker Roles'
+      nameshort: 'Roles'
+      desc: 'Roles "To-be" records and their association to apps through catalogs'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ro'
+      pay: 'free'
+      fnode: 'zftroles'
+      odata: 'ZNYPERO_SRV'
+      ro: 'ZNYPE_ROMAN'
+    ci:
+      name: 'Catalog Import'
+      nameshort: 'Catalog Import'
+      desc: 'Lets you import catalogs from your system into the "To-be" catalogs list'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: ' '
+      rep: 'ci'
+      pay: 'paid'
+      fnode: 'zftci'
+      odata: 'ZNYPECI_SRV'
+      ro: 'ZNYPE_CIMAN'      
+    ai:
+      name: 'Application Import'
+      nameshort: 'Apps Import'
+      desc: 'Lets you import applications from your system into the "To-be" application list'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ai'
+      pay: 'paid'
+      fnode: 'zftai, zftfl'
+      odata: 'ZNYPEAI_SRV'
+      ro: 'ZNYPE_AI'
+    mi:
+      name: 'Mapping Import'
+      nameshort: 'Mapping Import'
+      desc: 'Lets you import mappings of the applications to catalogs'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'mi'
+      pay: 'paid'
+      fnode: 'zftmi'
+      odata: 'ZNYPEMI_SRV'
+      ro: 'ZNYPE_MIMAN'
+    RelRo:
+      name: 'FT Apps and Catalogs Relation: Roles'
+      desc: 'The Roles relation shows a list of sign-offs linked to all content types (apps, catalogs and roles)'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ro'
+      pay: 'free'
+    gv:
+      name: 'Gover'
+      nameshort: 'Gover'
+      desc: 'Gover is a solution that enables security checks for your SAP system landscape.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'gv'
+      pay: 'paid'
+      fnode: 'zftgv'
+      odata: 'ZNYPEGV_SRV'
+      ro: 'ZNYPE_GVMAN'      
+
+  comp:  
+    core:
+      name: 'Fiori Tracker Core'
+      desc: 'Applications and Catalogs "To-be" records and their association'
+      nameshort: 'Core'
+      main: '2020'
+      latestrel: 'SPS03'
+      cen: 'X'
+      man: ' '
+      rep: 'installation'
+      pay: 'free'
+      fnode: 'zftapps, zftcats'
+      odata: 'ZNYPECOR_SRV'
+      ro: 'ZNYPE_FTMAN, ZNYPE_FTMEM'
+    asisCen:
+      name: 'As-is Main'
+      desc: 'Collects and enables synchronization of SAP Fiori setup data.'
+      nameshort: 'As-is API'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: ' '
+      rep: 'asis-cen'
+      pay: 'free'
+      fnode: 'zftdc, zftsy'
+      odata: 'ZNYPEASISCEN_SRV'
+      ro: 'ZNYPE_ASISCEN'
+    asisMan:
+      name: 'As-is Connector'
+      desc: 'Captures SAP Fiori setup from single system.'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: 'X'
+      rep: 'asis-man'
+      pay: 'paid'
+      fnode: ''
+      odata: ''
+      ro: ''
+    catAppRep:
+      name: 'Catalog and App reports'
+      desc: 'Catalog and Apps "As-is" records and their association.'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: ' '
+      rep: 'catapprep'
+      pay: 'free'  
+      fnode: 'zftca'
+      odata: 'ZNYPECA_SRV'
+      ro: 'ZNYPE_CAMAN'
+    fr:
+      name: 'Fiori Role Testing'
+      nameshort: 'Fiori Role Testing'
+      desc: 'The app tracks role testing to maintain the quality of production deployment.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'fr'
+      pay: 'free'
+      fnode: 'znypeat'
+      odata: 'ZNYPEAT_SRV'
+      ro: 'ZNYPE_FRMEN, ZNYPE_FRMAN'
+    cr:
+      name: 'Catalog Report'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: ' '
+      rep: 'cat-rep'
+      pay: 'free'
+    ac:
+      name: 'App Catalog Report'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ac'
+      pay: 'free'
+    ca:
+      name: 'Catalog App Report'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ca'
+      pay: 'free'
+    fam:
+      name: 'Fiori App Usage Main'
+      desc: 'Collects and displays usage records.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'fa'
+      pay: 'paid'
+      fnode: 'zftappusagerep, zfaadmin, zfaul'
+      odata: 'ZNYPEFACEN_SRV'
+      ro: 'ZNYPE_FAMAN'
+    fap:
+      name: 'Fiori App Usage Plugin'
+      desc: 'Captures usage records from a single system.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: 'X'
+      rep: 'fap'
+      pay: 'paid'
+      fnode: 'zftappusageplug'
+      odata: 'ZNYPEFAMAN_SRV'
+      ro: 'ZNYPE_FAMEM'
+    ftCatsRelAppsAsis:
+      name: 'FT Catalogs Relation: Apps As-is'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'asis-cen'
+      pay: 'free'
+    ftAppsRelCatsAsis:
+      name: 'FT Apps Relation: Catalogs, As-is'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'asis-cen'
+      pay: 'free'
+    ftAppsRelAppsUsage:
+      name: 'FT Apps Relation: App Usage'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'fa'
+      pay: 'paid'
+    ch:
+      name: 'Change Requests'
+      desc: 'Change request records linked to catalogs and apps'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ch'
+      pay: 'free'
+      fnode: 'zftch'
+      odata: 'ZNYPECH_SRV'
+      ro: 'ZNYPE_CHMAN'      
+    RelCh:
+      name: 'FT Apps and Catalogs Relation: Change Requests'
+      desc: 'The Change Request relation shows a list of change requests linked to an application or catalog.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ch'
+      pay: 'free'  
+    so:
+      name: 'Sign-offs'
+      desc: 'The Sign-offs app lets you create, change and list sign-offs records linked to all content types (apps, catalogs and roles)'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'so'
+      pay: 'free'
+      fnode: 'zftso'
+      odata: 'ZNYPESO_SRV'
+      ro: 'ZNYPE_SOMAN'      
+    tu:
+      name: 'Test users'
+      nameshort: 'Test users'
+      desc: 'The Test users app lets you create, change, and list test user records.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'tu'
+      pay: 'free'
+      fnode: 'zftusers'
+      odata: 'ZNYPEUS_SRV'
+      ro: 'ZNYPE_USMAN'
+    RelTu:
+      name: 'FT Apps Relation: Test users'
+      desc: 'The Test users relation shows a list of test users linked to all apps'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'tu'
+      pay: 'free'      
+    hi:
+      name: 'History'
+      nameshort: 'History'
+      desc: 'The History component keeps the history records for SAP Fiori launchpad key deliverables: apps, catalogs, and roles.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'hi'
+      pay: 'free'
+      fnode: 'zfthi'
+      odata: 'ZNYPEHI_SRV'
+      ro: 'ZNYPE_HIMAN'
+    co:
+      name: 'Comments'
+      nameshort: 'Comments'
+      desc: 'The Comments component keeps the free text notes records for SAP Fiori launchpad key deliverables: apps, catalogs, and roles.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'co'
+      pay: 'free'
+      fnode: 'zftco'
+      odata: 'ZNYPECO_SRV'
+      ro: 'ZNYPE_COMAN'
+    RelSo:
+      name: 'FT Apps and Catalogs Relation: Sign-offs'
+      desc: 'The Sign-offs relation shows a list of sign-offs linked to all content types (apps, catalogs and roles)'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'so'
+      pay: 'free'
+    ro:
+      name: 'Fiori Tracker Roles'
+      nameshort: 'Roles'
+      desc: 'Roles "To-be" records and their association to apps through catalogs'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ro'
+      pay: 'free'
+      fnode: 'zftroles'
+      odata: 'ZNYPERO_SRV'
+      ro: 'ZNYPE_ROMAN'
+    ci:
+      name: 'Catalog Import'
+      nameshort: 'Catalog Import'
+      desc: 'Lets you import catalogs from your system into the "To-be" catalogs list'
+      main: '2020'
+      latestrel: 'SPS02'
+      cen: 'X'
+      man: ' '
+      rep: 'ci'
+      pay: 'paid'
+      fnode: 'zftci'
+      odata: 'ZNYPECI_SRV'
+      ro: 'ZNYPE_CIMAN'      
+    ai:
+      name: 'Application Import'
+      nameshort: 'Apps Import'
+      desc: 'Lets you import applications from your system into the "To-be" application list'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ai'
+      pay: 'paid'
+      fnode: 'zftai'
+      odata: 'ZNYPEAI_SRV'
+      ro: 'ZNYPE_AI'
+    mi:
+      name: 'Mapping Import'
+      nameshort: 'Mapping Import'
+      desc: 'Lets you import mappings of the applications to catalogs'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'mi'
+      pay: 'paid'
+      fnode: 'zftmi'
+      odata: 'ZNYPEMI_SRV'
+      ro: 'ZNYPE_MIMAN'
+    RelRo:
+      name: 'FT Apps and Catalogs Relation: Roles'
+      desc: 'The Roles relation shows a list of sign-offs linked to all content types (apps, catalogs and roles)'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'ro'
+      pay: 'free'
+    gv:
+      name: 'Gover'
+      nameshort: 'Gover'
+      desc: 'Gover is a solution that enables security checks for your SAP system landscape.'
+      main: '2020'
+      latestrel: 'FPS01'
+      cen: 'X'
+      man: ' '
+      rep: 'gv'
+      pay: 'paid'
+      fnode: 'zftgv'
+      odata: 'ZNYPEGV_SRV'
+      ro: 'ZNYPE_GVMAN'      
