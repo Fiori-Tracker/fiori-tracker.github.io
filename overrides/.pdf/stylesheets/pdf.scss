@@ -1,0 +1,93 @@
+////
+/// Adapted from https://github.com/adrienbrignon/mkdocs-exporter/blob/0d4eae0c1920ecffe87d66b7f404c13ff7cdea47/resources/stylesheets/pdf.scss
+///
+/// MIT License
+/// Copyright (c) 2023 Adrien Brignon
+////
+:root {
+  --width: 21cm;
+  --margin: 1.20cm;
+  --height: 29.7cm;
+  --offset: calc(var(--margin) * 2);
+}
+
+@page {
+  size: A4;
+  margin: 1.20cm;
+}
+
+hr:has(+ div.md-source-file), .md-source-file {
+  display: none !important;
+}
+
+summary::after {
+  display: none;
+}
+
+.front-cover {
+  margin: var(--margin);
+  height: calc(var(--height) - var(--offset));
+  page-break-after: always;
+  border: 1px solid #fff;
+  position: relative;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    image-rendering: optimizeQuality;
+  }
+
+  > section {
+    color: #fff;
+    padding: 0.635cm;
+    max-width: 10.25cm;
+    word-wrap: break-word;
+    margin-top: calc(var(--height) / 2 - var(--offset) - 2cm);
+    font-size: 13pt;
+
+    > .title {
+      font-size: 26pt;
+      font-weight: 500;
+      line-height: 1.1;
+      color: #fff;
+    }
+  }
+}
+
+// This was deprecated
+//
+// h1, h2, h3 {
+//   string-set: chapter content();
+// }
+//
+// Replacement is to use counter-reset and counter-increment
+
+body {
+  print-color-adjust: exact;
+  counter-reset: chapter;
+  text-rendering: geometricPrecision;
+}
+
+h1, h2, h3 {
+  counter-increment: chapter;
+}
+
+h1::before, h2::before, h3::before {
+  content: "Chapter " counter(chapter) ": ";
+  font-weight: 700;
+}
+
+.md-main .md-main__inner {
+  margin: 0;
+}
+
+.md-content .md-content__inner {
+  margin: 0;
+  padding: 0;
+
+  &::before {
+    height: 0;
+  }
+}

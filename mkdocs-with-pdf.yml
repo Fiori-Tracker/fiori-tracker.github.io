@@ -191,16 +191,16 @@ plugins:
   - exporter:
       theme: material
       formats:
-         pdf:
-           explicit: true
-           aggregator:
-             enabled: true
-           concurrency: 32
-           stylesheets:
-             - resources/stylesheets/pdf.scss
-           covers:
-             front: resources/templates/covers/front.html.j2
-             back: resources/templates/covers/back.html.j2
+        pdf:
+          explicit: true
+          aggregator:
+            enabled: true
+          concurrency: 32
+          stylesheets:
+            - overrides/.pdf/stylesheets/pdf.scss
+          covers:
+            front: overrides/.pdf/covers/front.html.j2
+            back: overrides/.pdf/covers/back.html.j2
   - custom_social_logo
   - custom_redirects
   - sap_icons

@@ -208,6 +208,9 @@ plugins:
         /nr/m004: https://fioritracker.org/inst/step-4/
         /nr/m005: https://fioritracker.org/ui5lib-options/
 
+hooks:
+- hook.py
+
 copyright: Copyright &copy; {year} Nype
 extra:
   analytics:
