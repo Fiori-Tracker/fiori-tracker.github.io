@@ -173,3 +173,7 @@ cython_debug/
 /site_for_deploy
 /docs_for_deploy
 /mkdocs_for_deploy.yml
+
+# For local build of pdf
+
+mkdocs-with-pdf.yml
