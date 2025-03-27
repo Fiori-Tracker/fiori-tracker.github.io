@@ -1,4 +1,5 @@
 import os
+import re
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -6,16 +7,20 @@ from urllib.parse import urljoin, urlparse
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import event_priority
 from mkdocs_exporter.formats.pdf.preprocessor import Preprocessor
+from mkdocs_exporter.formats.pdf.renderer import Renderer
+from mkdocs_exporter.page import Page as ExporterPage
 
 
 class StateHandler:
     has_exporter = False
     debug = False
     rewrite_png_to_webp = True
+    replace_placeholder = True
 
 
 class PassAlong:
     pdf_date = datetime.now().strftime("%Y-%m-%d")
+    replace_map: dict = {}
 
 
 @event_priority(100)
@@ -26,12 +31,19 @@ def on_config(config: MkDocsConfig):
         "true",
         "1",
     ]
+    PassAlong.replace_map.clear()
 
     if not StateHandler.has_exporter:
         return
 
     if StateHandler.rewrite_png_to_webp:
         Preprocessor.rewrite_links = rewrite_links
+
+    if StateHandler.replace_placeholder:
+        PassAlong.replace_map = {
+            "pdf_date": PassAlong.pdf_date,
+        }
+        Renderer.preprocess = wrap_preprocess(Renderer.preprocess)
 
     # Create file:// protocol root for PDF templates
     # Using base "/assets" path resolves it based on the opened file
@@ -55,7 +67,7 @@ def on_config(config: MkDocsConfig):
 
 
 @event_priority(100)
-def on_page_markdown(markdown, page, config, files):
+def on_page_markdown(markdown, page: ExporterPage, config, files):
 
     if not StateHandler.has_exporter:
         return
@@ -66,8 +78,14 @@ def on_page_markdown(markdown, page, config, files):
 
     src_uri: str = page.file.src_uri
 
-    if src_uri.startswith(prefixes):
-        page.meta["pdf"] = True
+    if not src_uri.startswith(prefixes):
+        return
+
+    page.meta["pdf"] = True
+
+    replace_map = page.formats["pdf"].get("replace_map") or {**PassAlong.replace_map}
+    replace_map["page_title"] = page.title
+    page.formats["pdf"]["replace_map"] = replace_map
 
 
 @event_priority(-105)
@@ -99,3 +117,37 @@ def rewrite_links(self, base: str, root: str) -> None:
             new_url = new_url.rsplit(".", maxsplit=1)[0] + ".webp"
 
         element["href"] = new_url
+
+
+def wrap_preprocess(func):
+
+    pattern = r'"#\s*(.*?)\s*#"'
+
+    def replacer(replace_map):
+
+        def replace(match):
+            placeholder = match.groups()[0]
+            replacement = replace_map.get(placeholder)
+
+            if replacement is None:
+                raise RuntimeError(f"{placeholder} not in replace_map")
+
+            return f'"{replacement}"'
+
+        return replace
+
+    def wrapper(self, page: ExporterPage, disable: list = []) -> str:
+
+        result: str = func(self, page, disable)
+
+        sections = result.split("</head>")
+
+        if "@page" in sections[0]:
+            replace = replacer(page.formats["pdf"]["replace_map"])
+            sections[0] = re.sub(pattern, replace, sections[0], flags=re.I)
+
+        result = "</head>".join(sections)
+
+        return result
+
+    return wrapper

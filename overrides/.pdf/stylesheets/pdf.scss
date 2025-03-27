@@ -10,16 +10,32 @@
   size: A4;
   margin: 1.20cm;
 
-  // Variables with page metadata that can't currenly be fetched from MkDocs
+  // Variables with page metadata that need to be fetched for all pages
   --page-margin-text-size: 9pt;
   --page-margin-text-color: #7f7f7f;
   --page-top-center-content: "Fiori Tracker";
   --page-bottom-left-content: "All Rights Reserved © Nype";
+  // Macros only run for Cover pages, and this data is needed for all pages
+  // The placeholder is replaced via the hook.py
+  --page-pdf-date: "#pdf_date#";
+  --page-title: "#page_title#";
 
   @top-center {
     font-size: var(--page-margin-text-size);
     color: var(--page-margin-text-color);
-    content: var(--page-top-center-content);
+    content: var(--page-top-center-content) " - " var(--page-title);
+  }
+
+  @bottom-right {
+    font-size: var(--page-margin-text-size);
+    color: var(--page-margin-text-color);
+    content: var(--page-pdf-date);
+  }
+
+  @bottom-left {
+    font-size: var(--page-margin-text-size);
+    color: var(--page-margin-text-color);
+    content: var(--page-bottom-left-content);
   }
 }
 
