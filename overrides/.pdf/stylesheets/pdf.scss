@@ -4,80 +4,118 @@
 /// MIT License
 /// Copyright (c) 2023 Adrien Brignon
 ////
-:root {
-  --width: 21cm;
-  --margin: 1.20cm;
-  --height: 29.7cm;
-  --offset: calc(var(--margin) * 2);
-}
-
 @page {
+  // Can't use var() here, because some @page properties don't resolve it
+  // https://stackoverflow.com/questions/44735420/using-custom-properties-with-page-rules
   size: A4;
   margin: 1.20cm;
+
+  // Variables with page metadata that can't currenly be fetched from MkDocs
+  --page-margin-text-size: 9pt;
+  --page-margin-text-color: #7f7f7f;
+  --page-top-center-content: "Fiori Tracker";
+  --page-bottom-left-content: "All Rights Reserved";
+
+  @top-center {
+    font-size: var(--page-margin-text-size);
+    color: var(--page-margin-text-color);
+    content: var(--page-top-center-content);
+  }
 }
 
-hr:has(+ div.md-source-file), .md-source-file {
-  display: none !important;
+:root {
+  --margin: 1.20cm; // Based on @page.margin
+  --height: 29.7cm; // Based on what? Maybe on @page.size
+  --width: 21cm; // Based on what? Maybe on @page.size
+  --offset: calc(var(--margin) * 2); // Used later in height calculation to take margins into account
+  --ft-sticker-bg-color: #0d0d72; // Match background with sticker
+
+  --cover-large-text: 32pt;
+  --cover-medium-text: 24pt;
+  --cover-small-text: 12pt;
+  --cover-text-color: #fff;
 }
 
-summary::after {
-  display: none;
+body {
+  print-color-adjust: exact;
+  // counter-reset: chapter;
+  text-rendering: geometricPrecision;
 }
 
-.front-cover {
-  margin: var(--margin);
-  height: calc(var(--height) - var(--offset));
-  page-break-after: always;
+.limits-cover {
+  color: var(--cover-text-color);
   border: 1px solid #fff;
+  height: calc(var(--height) - var(--offset));
+  width: calc(var(--width) - var(--offset));
   position: relative;
+  font-size: var(--cover-small-text);
 
-  img {
+  > img.pdf-background {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    image-rendering: optimizeQuality;
   }
 
   > section {
-    color: #fff;
     padding: 0.635cm;
-    max-width: 10.25cm;
     word-wrap: break-word;
     margin-top: calc(var(--height) / 2 - var(--offset) - 2cm);
-    font-size: 13pt;
+    text-align: center;
 
-    > .title {
-      font-size: 26pt;
-      font-weight: 500;
-      line-height: 1.1;
-      color: #fff;
+    > .brand-name {
+      font-size: var(--cover-large-text);
+      font-weight: 700;
+      // line-height: 1.1;
+      // margin-top: 1em;
+      // string-set: title content(text);
+    }
+
+    > .page-title {
+      font-size: var(--cover-medium-text);
+    }
+
+    > .pdf-date {
+      font-size: var(--cover-small-text);
     }
   }
 }
 
-// This was deprecated
-//
-// h1, h2, h3 {
-//   string-set: chapter content();
-// }
-//
-// Replacement is to use counter-reset and counter-increment
+.front-cover {
+  page-break-after: always;
 
-body {
-  print-color-adjust: exact;
-  counter-reset: chapter;
-  text-rendering: geometricPrecision;
+  .logo {
+    position: absolute;
+    top: calc(2cm);
+    fill: var(--cover-text-color);
+    left: 50%;
+    transform: translateX(-50%);
+
+    > div {
+      width: 5cm;
+      text-align: center;
+      height: 5cm;
+    }
+  }
 }
 
-h1, h2, h3 {
-  counter-increment: chapter;
+.back-cover {
+  page: last;
+
+  // section {
+  //   color: #fff;
+  //   font-size: 12pt;
+  //   vertical-align: middle;
+  //   text-align: center;
+  //   margin-top: calc(--height / 2 - --offset / 2);
+
+  //   > .title {
+  //     font-size: 24pt;
+  //   }
+  // }
 }
 
-h1::before, h2::before, h3::before {
-  content: "Chapter " counter(chapter) ": ";
-  font-weight: 700;
-}
+// Material fixes
 
 .md-main .md-main__inner {
   margin: 0;
@@ -91,3 +129,31 @@ h1::before, h2::before, h3::before {
     height: 0;
   }
 }
+
+hr:has(+ div.md-source-file), .md-source-file {
+  display: none !important;
+}
+
+summary::after {
+  display: none;
+}
+
+// This was deprecated
+//
+// h1, h2, h3 {
+//   string-set: chapter content();
+// }
+//
+// Replacement is to use counter-reset and counter-increment
+// Errata: The chapters aren't incremented correctly this way
+// Hard to say if it worked before the deprecation
+// TODO Debug the chapter logic
+
+// h1, h2, h3 {
+//   counter-increment: chapter;
+// }
+//
+// h1::before, h2::before, h3::before {
+//   content: "Chapter " counter(chapter) ": ";
+//   font-weight: 700;
+// }

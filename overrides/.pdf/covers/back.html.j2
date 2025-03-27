@@ -5,33 +5,9 @@ MIT License
 Copyright (c) 2023 Adrien Brignon
 -#}
 <style data-teleport="head">
-  .back-cover {
-    page: last;
-    height: 100%;
-  }
-
-  .back-cover img {
-    top: 0;
-    left: 0;
-    position: absolute;
-  }
-
-  .back-cover section {
-    .title {
-      color: #fff;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      vertical-align: middle;
-      font-size: 24pt;
-      text-align: center;
-      width: 100%;
-    }
-  }
-
   @page last {
-    margin: 0;
-    background: var(--md-primary-fg-color);
+    background: var(--ft-sticker-bg-color);
+    --page-margin-text-color: var(--cover-text-color);
 
     @top-center {
       content: none;
@@ -40,10 +16,24 @@ Copyright (c) 2023 Adrien Brignon
     @bottom-center {
       content: none;
     }
+
+    @bottom-right {
+      font-size: var(--page-margin-text-size);
+      color: var(--page-margin-text-color);
+      content: "{{ config.extra.pdf_date }}";
+    }
+
+    @bottom-left {
+      font-size: var(--page-margin-text-size);
+      color: var(--page-margin-text-color);
+      content: var(--page-bottom-left-content);
+    }
   }
 </style>
-<div class="back-cover">
+<div class="back-cover limits-cover">
+  <img class="pdf-background" src="{{ config.extra.site_file_proto_root }}/assets/images/background.png">
   <section>
-    <div class="title">{{ config.site_name }}</div>
+    <div class="brand-name">{{ config.site_name }}</div>
+    <div class="pdf-date">{{ config.extra.pdf_date }}</div>
   </section>
 </div>
