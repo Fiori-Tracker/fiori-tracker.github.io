@@ -1,5 +1,7 @@
 # Comments
 
+## Usage 
+
 {{ prod.co.desc }} 
 
 [![](res/co1.png)](res/co1.png)
@@ -8,9 +10,8 @@
 
 [![](res/co3.png)](res/co3.png)
 
-## [Installation](inst.md)
+## Configuration
 
-## [Configuration](conf.md)
-
+To configure Sign-off start SAP Gui transaction **ZHIADMIN**.
 
 
