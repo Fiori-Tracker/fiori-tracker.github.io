@@ -13,6 +13,7 @@ nav:
     - App usage report: features/usage-report.md
     - User usage report: features/user-usage-report.md
     - Usage log: features/usage-log.md
+    - Fiori role testing: features/fiori-role-testing.md
     - Specifying apps: features/specifying-apps.md
     - Specifying catalogs: features/specifying-catalogs.md
     - Mapping apps to a catalog: features/mapping-apps-to-a-catalog.md
@@ -20,6 +21,7 @@ nav:
     - Fiori Tracker App relation - App usage: features/ft-core-relation-app-usage.md
     - Cleaning tool:  features/cleaning.md
     - Filtering: features/filtering.md
+
 
   - Explore Details: 
     - explore-fiori-tracker-details/index.md
