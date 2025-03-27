@@ -8,6 +8,6 @@ General Basis expert steps
 
 As-is API, Basis expert steps
 
-1. [Install As-is API](../../asis/SPS02/inst.md)
+1. [Install As-is API](../../inst/asis-api-installation.md)
 
 If you are installing Catalog Report for the first time, please check [Evaluation deployment](eval-dep.md) for details on installing Catalog Report to one system (f.e. Sandbox).

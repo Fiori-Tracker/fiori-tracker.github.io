@@ -8,6 +8,6 @@ Main part:
 
 As-is API:
 
-1. [Install As-is API](../../asis/SPS02/inst.md)
+1. [Install As-is API](../../inst/asis-api-installation.md)
 
 See also an [optional step](inst-opt.md) for installing FT Core - Catalogs Relation: Apps, As-is
