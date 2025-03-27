@@ -6,4 +6,3 @@ The tool lets you list the catalogs from all your systems and import them to [Fi
 
 [![](res/ci.png)](res/ci.png)
 
-## [Installation](installation.md)
