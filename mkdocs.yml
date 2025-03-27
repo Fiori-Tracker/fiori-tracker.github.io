@@ -20,7 +20,6 @@ nav:
     - Records export: features/records-export.md
     - Fiori Tracker App relation - App usage: features/ft-core-relation-app-usage.md
     - Cleaning tool:  features/cleaning.md
-    - Filtering: features/filtering.md
 
 
   - Explore Details: 
