@@ -17,6 +17,7 @@ nav:
     - Specifying catalogs: features/specifying-catalogs.md
     - Mapping apps to a catalog: features/mapping-apps-to-a-catalog.md
     - Records export: features/records-export.md
+    - Fiori Tracker App relation - App usage: features/ft-core-relation-app-usage.md
 
   - Explore Details: 
     - explore-fiori-tracker-details/index.md
