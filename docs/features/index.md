@@ -5,4 +5,10 @@ Fiori Tracker is packed with many great features that make the SAP S/4HANA proje
 [![](res/tiles.png)](res/tiles.png)
 *Fiori Tracker Core group tiles*
 
-The main application that showcases the most popular applications in your S/4HANA system is the [Fiori App Usage Report](usage-report.md). This report provides insights into last week's and today's total launch counts for all SAP Fiori launchpad-enabled applications. Additionally, the [User usage report](user-usage-report.md) lists every app a user accessed and the access count for each app. Furthermore, the [Usage log report](usage-log.md) presents a comprehensive list of all count records, including system, username, app ID, and name, as well as the date and time of the start. You can further analyze these usage log records using your preferred analytical tool.
+The [Fiori App Usage Report](usage-report.md) shows which apps in your S/4HANA system are used the most. It tracks how often each app was opened today and last week.
+
+The [User Usage Report](user-usage-report.md)  shows which apps each user accessed and how many times.
+
+The [Usage Log Report](usage-log.md) gives a full list of app usage, including system, user, app ID, app name, and when it was used. 
+
+To gain other insights, you can export the usage logs or directly access them from the system table and integrate them with your existing analytics tools, such as SAP Cloud analytics.
