@@ -42,3 +42,18 @@ The cleaning tool has two input fields:
 2. Created before this date - It allows you to define the cut-off date. All records saved prior to this date will be deleted.
 
 [![](res/clean-records.png)](res/clean-records.png)
+
+## Configuration
+
+To change Central part configuration start the transaction `ZFACENADMIN` and press button labeled: **2. Edit configuration**. This action will open a configuration screen:
+
+[![](res/fiori-app-usage-report-config.png)](res/fiori-app-usage-report-config.png)
+
+The table below describes all available parameters:
+
+| Key                   | Value     | Description            |
+|-----------------------|-----------|------------------------|
+| ACTIVATION_KEY        | *key*     | Value is provided by Nype team         |
+| INCOMP_HIDE           | **TRUE** | When set to TRUE the version compatibility warning will not show |
+| LOGMODE               | **FULL** | Plugin will write down usage records only when this parameter is set to **FULL**. Delete this parameter to stop writing usage records. This allows stopping log collection without removing user's Fiori App Usage role.|
+

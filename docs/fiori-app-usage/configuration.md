@@ -7,6 +7,5 @@ Fiori App Usage has two components:
 
 Each of those components has a configuration table on its system.
 
-1. [Configure Fiori App Usage Report](../fiori-app-usage-report/configuration.md)
 2. [Configure Fiori App Usage Plugin](../fiori-app-usage-plugin/configuration.md)
 
