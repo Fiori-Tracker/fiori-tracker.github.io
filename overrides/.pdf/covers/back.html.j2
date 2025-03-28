@@ -13,7 +13,17 @@ Copyright (c) 2023 Adrien Brignon
       content: none;
     }
 
+    @bottom-right {
+      content: none;
+    }
+
     @bottom-center {
+      font-size: var(--page-margin-text-size);
+      color: var(--page-margin-text-color);
+      content: var(--page-bottom-left-content);
+    }
+
+    @bottom-left {
       content: none;
     }
   }
@@ -21,7 +31,7 @@ Copyright (c) 2023 Adrien Brignon
 <div class="back-cover limits-cover">
   <img class="pdf-background" src="{{ config.extra.site_file_proto_root }}/assets/images/background.png">
   <section>
-    <div class="brand-name">{{ config.site_name }}</div>
-    <div class="pdf-date">{{ config.extra.pdf_date }}</div>
+    <div class="brand-name"><a href="{{ config.site_url }}?ref=pdf" target="_blank">{{ config.site_name }}</a></div>
+    <div class="page-title">{{ config.extra.first_page_title }}</div>
   </section>
 </div>

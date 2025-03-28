@@ -1,4 +1,5 @@
 site_name: Fiori Tracker
+site_author: Nype
 site_url: https://fioritracker.org
 site_description: 'Fiori Tracker simplifies SAP Fiori app management. Centralized platform for collaborating on requirements.'
 nav:

@@ -124,17 +124,9 @@ body {
 .back-cover {
   page: last;
 
-  // section {
-  //   color: #fff;
-  //   font-size: 12pt;
-  //   vertical-align: middle;
-  //   text-align: center;
-  //   margin-top: calc(--height / 2 - --offset / 2);
-
-  //   > .title {
-  //     font-size: 24pt;
-  //   }
-  // }
+  a {
+    color: inherit;
+  }
 }
 
 // Material fixes

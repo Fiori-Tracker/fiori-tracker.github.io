@@ -7,6 +7,7 @@ from urllib.parse import urljoin, urlparse
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import event_priority
 from mkdocs_exporter.formats.pdf.aggregator import Aggregator
+from mkdocs_exporter.formats.pdf.plugin import Plugin as ExporterPlugin
 from mkdocs_exporter.formats.pdf.preprocessor import Preprocessor
 from mkdocs_exporter.formats.pdf.renderer import Renderer
 from mkdocs_exporter.page import Page as ExporterPage
@@ -18,22 +19,32 @@ class StateHandler:
     rewrite_png_to_webp = True
     replace_placeholder = True
     fix_pages_indexes = True
+    process_metadata = True
 
 
 class PassAlong:
     pdf_date = datetime.now().strftime("%Y-%m-%d")
+    pdf_date_meta = datetime.now().strftime("D\072%Y%m%d%H%M%S")
+    pdf_title_meta = None
+    pdf_author_meta = None
     replace_map: dict = {}
+    first_page_title = None
 
 
 @event_priority(100)
 def on_config(config: MkDocsConfig):
 
-    StateHandler.has_exporter = "exporter-pdf" in config.plugins
+    exporter_plugin = config.plugins.get("exporter-pdf")
+    StateHandler.has_exporter = bool(exporter_plugin)
     StateHandler.debug = os.getenv("DEBUG_PDF", "False").lower().strip() in [
         "true",
         "1",
     ]
     PassAlong.replace_map.clear()
+    PassAlong.first_page_title = None
+
+    PassAlong.pdf_title_meta = config.site_name
+    PassAlong.pdf_author_meta = config.site_author
 
     if not StateHandler.has_exporter:
         return
@@ -49,6 +60,9 @@ def on_config(config: MkDocsConfig):
 
     if StateHandler.fix_pages_indexes:
         Aggregator.preprocess = wrap_aggregator_preprocess(Aggregator.preprocess)
+
+    if StateHandler.process_metadata:
+        Aggregator.save = wrap_aggregator_save(Aggregator.save, exporter_plugin)
 
     # Create file:// protocol root for PDF templates
     # Using base "/assets" path resolves it based on the opened file
@@ -72,7 +86,7 @@ def on_config(config: MkDocsConfig):
 
 
 @event_priority(100)
-def on_page_markdown(markdown, page: ExporterPage, config, files):
+def on_page_markdown(markdown, page: ExporterPage, config: MkDocsConfig, files):
 
     if not StateHandler.has_exporter:
         return
@@ -87,6 +101,13 @@ def on_page_markdown(markdown, page: ExporterPage, config, files):
         return
 
     page.meta["pdf"] = True
+
+    if config.extra.get("first_page_title") is None:
+        assert (
+            PassAlong.first_page_title is None
+        ), "first_page_title should be None here"
+        PassAlong.first_page_title = page.title
+        config.extra["first_page_title"] = page.title
 
     replace_map = page.formats["pdf"].get("replace_map") or {**PassAlong.replace_map}
     replace_map["page_title"] = page.title
@@ -141,7 +162,10 @@ def wrap_renderer_preprocess(func):
 
         return replace
 
-    def wrapper(self: Renderer, page: ExporterPage, disable: list = []) -> str:
+    def wrapper(self: Renderer, page: ExporterPage, disable: list = None) -> str:
+
+        if disable is None:
+            disable = []
 
         result: str = func(self, page, disable)
 
@@ -168,5 +192,49 @@ def wrap_aggregator_preprocess(func):
             p.index = p.index - min_index
 
         return func(self, page)
+
+    return wrapper
+
+
+def wrap_aggregator_save(func, exporter_plugin: ExporterPlugin):
+    """https://pypdf.readthedocs.io/en/stable/user/metadata.html#writing-metadata"""
+
+    def wrapper(self, metadata=None) -> Aggregator:
+
+        if metadata is None:
+            metadata = {}
+
+        # BUGFIX, the config meta data isn't properly passed
+        metadata.update(exporter_plugin.config.aggregator.metadata)
+
+        creation_date: str = metadata.get("/CreationDate")
+        mod_date: str = metadata.get("/ModDate")
+        pdf_title: str = metadata.get("/Title")
+        pdf_author: str = metadata.get("/Author")
+        pdf_creator: str = metadata.get("/Creator")
+        pdf_subject: str = metadata.get("/Subject")
+
+        if creation_date:
+            metadata["/CreationDate"] = creation_date.format(
+                hook=PassAlong.pdf_date_meta
+            )
+
+        if mod_date:
+            metadata["/ModDate"] = mod_date.format(hook=PassAlong.pdf_date_meta)
+
+        if pdf_title is None:
+            metadata["/Title"] = PassAlong.pdf_title_meta
+
+        if pdf_subject is None:
+            if metadata["/Title"] != PassAlong.first_page_title:
+                metadata["/Subject"] = PassAlong.first_page_title
+
+        if pdf_author is None:
+            metadata["/Author"] = PassAlong.pdf_author_meta
+
+        if pdf_creator is None:
+            metadata["/Creator"] = PassAlong.pdf_author_meta
+
+        return func(self, metadata)
 
     return wrapper
