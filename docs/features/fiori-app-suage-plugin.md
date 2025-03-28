@@ -1,6 +1,12 @@
-# Fiori App Usage Plugin configuration (Managed system)
+# Fiori App Usage Plugin
 
-To change Central part configuration start the transaction `ZFAMANADMIN` and press button *2. Edit configuration*. This action will open a configuration screen:
+## Introduction
+
+Fiori App Usage Plugin is resposible for collecting and sending the usage information to Central system.
+
+## Configuration
+
+To change Managed system configuration start the transaction `ZFAMANADMIN` and press button *2. Edit configuration*. This action will open a configuration screen:
 
 [![](res/fiori-app-usage-plugin-config.png)](res/fiori-app-usage-plugin-config.png)
 
