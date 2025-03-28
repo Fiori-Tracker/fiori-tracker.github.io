@@ -6,6 +6,7 @@ from urllib.parse import urljoin, urlparse
 
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import event_priority
+from mkdocs_exporter.formats.pdf.aggregator import Aggregator
 from mkdocs_exporter.formats.pdf.preprocessor import Preprocessor
 from mkdocs_exporter.formats.pdf.renderer import Renderer
 from mkdocs_exporter.page import Page as ExporterPage
@@ -16,6 +17,7 @@ class StateHandler:
     debug = False
     rewrite_png_to_webp = True
     replace_placeholder = True
+    fix_pages_indexes = True
 
 
 class PassAlong:
@@ -43,7 +45,10 @@ def on_config(config: MkDocsConfig):
         PassAlong.replace_map = {
             "pdf_date": PassAlong.pdf_date,
         }
-        Renderer.preprocess = wrap_preprocess(Renderer.preprocess)
+        Renderer.preprocess = wrap_renderer_preprocess(Renderer.preprocess)
+
+    if StateHandler.fix_pages_indexes:
+        Aggregator.preprocess = wrap_aggregator_preprocess(Aggregator.preprocess)
 
     # Create file:// protocol root for PDF templates
     # Using base "/assets" path resolves it based on the opened file
@@ -119,7 +124,7 @@ def rewrite_links(self, base: str, root: str) -> None:
         element["href"] = new_url
 
 
-def wrap_preprocess(func):
+def wrap_renderer_preprocess(func):
 
     pattern = r'"#\s*(.*?)\s*#"'
 
@@ -136,7 +141,7 @@ def wrap_preprocess(func):
 
         return replace
 
-    def wrapper(self, page: ExporterPage, disable: list = []) -> str:
+    def wrapper(self: Renderer, page: ExporterPage, disable: list = []) -> str:
 
         result: str = func(self, page, disable)
 
@@ -149,5 +154,19 @@ def wrap_preprocess(func):
         result = "</head>".join(sections)
 
         return result
+
+    return wrapper
+
+
+def wrap_aggregator_preprocess(func):
+
+    def wrapper(self: Aggregator, page: ExporterPage) -> str:
+
+        min_index = min(p.index for p in self.pages)
+
+        for p in self.pages:
+            p.index = p.index - min_index
+
+        return func(self, page)
 
     return wrapper

@@ -32,6 +32,12 @@
     content: var(--page-pdf-date);
   }
 
+  @bottom-center {
+    font-size: var(--page-margin-text-size);
+    color: var(--page-margin-text-color);
+    content: "Page " counter(page) " of " counter(pages);
+  }
+
   @bottom-left {
     font-size: var(--page-margin-text-size);
     color: var(--page-margin-text-color);
