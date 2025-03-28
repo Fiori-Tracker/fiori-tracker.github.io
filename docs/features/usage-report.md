@@ -29,3 +29,16 @@ The function is available from the App Usage Admin app:
 [![Admin app screenshot 2](res/admin-app2.png)](res/admin-app2.png)
 
 [Example export file](res/apps-usage-export.xlsx)
+
+## Cleaning tool
+
+Old usage records can be removed with cleaning tool. The cleaning tool is available form Administration tool started with transaction **ZFACENADMIN**. To lunch the tool start the transaction and chose function *3. Clean old usage records*:
+
+[![](res/admin-tool.png)](res/admin-tool.png)
+
+The cleaning tool has two input fields:
+
+1. System ID - specifies the system for which you want to delete the records
+2. Created before this date - It allows you to define the cut-off date. All records saved prior to this date will be deleted.
+
+[![](res/clean-records.png)](res/clean-records.png)
