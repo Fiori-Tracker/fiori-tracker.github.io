@@ -107,3 +107,12 @@
         color: #fff;
     }
 }
+/* Debug element margins */
+/* Avoid page breaks at the end from bad margins */
+/* https://stackoverflow.com/questions/7846346/how-can-i-avoid-an-extra-blank-page-at-the-end-while-printing */
+
+@media print {
+    :root * {
+        outline: 1px solid green !important;
+    }
+}
