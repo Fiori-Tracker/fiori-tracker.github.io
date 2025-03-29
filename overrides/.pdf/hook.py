@@ -14,7 +14,7 @@ from mkdocs_exporter.page import Page as ExporterPage
 
 
 class StateHandler:
-    has_exporter = False
+    exporter_plugin: ExporterPlugin = None
     debug = False
     rewrite_png_to_webp = True
     replace_placeholder = True
@@ -30,12 +30,10 @@ class PassAlong:
     replace_map: dict = {}
     first_page_title = None
 
-
 @event_priority(100)
 def on_config(config: MkDocsConfig):
 
-    exporter_plugin = config.plugins.get("exporter-pdf")
-    StateHandler.has_exporter = bool(exporter_plugin)
+    StateHandler.exporter_plugin = config.plugins.get("exporter-pdf")
     StateHandler.debug = os.getenv("DEBUG_PDF", "False").lower().strip() in [
         "true",
         "1",
@@ -46,7 +44,7 @@ def on_config(config: MkDocsConfig):
     PassAlong.pdf_title_meta = config.site_name
     PassAlong.pdf_author_meta = config.site_author
 
-    if not StateHandler.has_exporter:
+    if not StateHandler.exporter_plugin:
         return
 
     if StateHandler.rewrite_png_to_webp:
@@ -62,7 +60,7 @@ def on_config(config: MkDocsConfig):
         Aggregator.preprocess = wrap_aggregator_preprocess(Aggregator.preprocess)
 
     if StateHandler.process_metadata:
-        Aggregator.save = wrap_aggregator_save(Aggregator.save, exporter_plugin)
+        Aggregator.save = wrap_aggregator_save(Aggregator.save)
 
     # Create file:// protocol root for PDF templates
     # Using base "/assets" path resolves it based on the opened file
@@ -88,8 +86,10 @@ def on_config(config: MkDocsConfig):
 @event_priority(100)
 def on_page_markdown(markdown, page: ExporterPage, config: MkDocsConfig, files):
 
-    if not StateHandler.has_exporter:
+    if not StateHandler.exporter_plugin:
         return
+
+    exporter_plugin = StateHandler.exporter_plugin
 
     prefixes = (
         "features",
@@ -97,7 +97,7 @@ def on_page_markdown(markdown, page: ExporterPage, config: MkDocsConfig, files):
 
     src_uri: str = page.file.src_uri
 
-    if not src_uri.startswith(prefixes):
+    if exporter_plugin.config.explicit and not src_uri.startswith(prefixes):
         return
 
     page.meta["pdf"] = True
@@ -196,8 +196,11 @@ def wrap_aggregator_preprocess(func):
     return wrapper
 
 
-def wrap_aggregator_save(func, exporter_plugin: ExporterPlugin):
+def wrap_aggregator_save(func):
     """https://pypdf.readthedocs.io/en/stable/user/metadata.html#writing-metadata"""
+
+    assert StateHandler.exporter_plugin
+    exporter_plugin = StateHandler.exporter_plugin
 
     def wrapper(self, metadata=None) -> Aggregator:
 
