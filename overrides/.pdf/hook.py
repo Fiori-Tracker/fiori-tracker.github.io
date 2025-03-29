@@ -2,6 +2,7 @@ import os
 import re
 from datetime import datetime
 from pathlib import Path
+from textwrap import dedent
 from urllib.parse import urljoin, urlparse
 
 from mkdocs.config.defaults import MkDocsConfig
@@ -11,6 +12,7 @@ from mkdocs_exporter.formats.pdf.plugin import Plugin as ExporterPlugin
 from mkdocs_exporter.formats.pdf.preprocessor import Preprocessor
 from mkdocs_exporter.formats.pdf.renderer import Renderer
 from mkdocs_exporter.page import Page as ExporterPage
+from playwright.async_api._generated import Page as PlaywrightPage
 
 
 class StateHandler:
@@ -20,6 +22,7 @@ class StateHandler:
     replace_placeholder = True
     fix_pages_indexes = True
     process_metadata = True
+    add_footer_link_region = True
 
 
 class PassAlong:
@@ -29,6 +32,7 @@ class PassAlong:
     pdf_author_meta = None
     replace_map: dict = {}
     first_page_title = None
+
 
 @event_priority(100)
 def on_config(config: MkDocsConfig):
@@ -61,6 +65,9 @@ def on_config(config: MkDocsConfig):
 
     if StateHandler.process_metadata:
         Aggregator.save = wrap_aggregator_save(Aggregator.save)
+
+    if StateHandler.add_footer_link_region:
+        PlaywrightPage.pdf = wrap_playwright_page_pdf(PlaywrightPage.pdf)
 
     # Create file:// protocol root for PDF templates
     # Using base "/assets" path resolves it based on the opened file
@@ -239,5 +246,23 @@ def wrap_aggregator_save(func):
             metadata["/Creator"] = PassAlong.pdf_author_meta
 
         return func(self, metadata)
+
+    return wrapper
+
+
+def wrap_playwright_page_pdf(func):
+
+    async def wrapper(self, **kwargs):
+        kwargs["display_header_footer"] = True
+        kwargs["footer_template"] = dedent(
+            """
+        <div style="width: 155px; position: absolute; left: 1.20cm; bottom: .35cm;">
+            <a href="https://npe.cm/?ref=pdf" target="_blank">
+                <div style="width: 100%; height: 16em"></div>
+            </a>
+        </div>
+        """
+        ).strip()
+        return await func(self, **kwargs)
 
     return wrapper
