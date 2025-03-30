@@ -16,6 +16,7 @@ nav:
     - User usage report: features/user-usage-report.md
     - Usage log: features/usage-log.md
     - Fiori role testing: features/fiori-role-testing.md
+    - FT applications: features/apps.md
     - Specifying apps: features/specifying-apps.md
     - Specifying catalogs: features/specifying-catalogs.md
     - Mapping apps to a catalog: features/mapping-apps-to-a-catalog.md

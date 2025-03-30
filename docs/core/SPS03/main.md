@@ -3,7 +3,7 @@ description: 'Fiori Tracker Core tracks apps and catalogs, replacing spreadsheet
 ---
 # Fiori Tracker Core
 
-Fiori Tracker Core replaces Excel spreadsheets in tracking application assignments to catalogs. It is a [pair of apps](core-apps.md): one for the list of applications and one for catalogs.
+Fiori Tracker Core replaces Excel spreadsheets in tracking application assignments to catalogs. It is a pair of apps: one for the list of [applications](../../features/apps.md) and one for [catalogs](../../features/cats.md).
 
 [![](res/ftcor-apps.png)](res/ftcor-apps.png)
 ## Key features

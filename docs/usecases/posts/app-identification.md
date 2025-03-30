@@ -20,7 +20,7 @@ Clear identification of the applications in scope.
 
 ## How did the Fiori Tracker address the challenge?
 
-To address the need for clear application identification Fiori Tracker keeps records of ["Content type: Application"](../../tracked/SPS03/apps.md). With the help of application ["FT Applications"](../../core/SPS03/apps.md) you can store the records of all your Fiori launchpad enabled applications in scope. Application records are kept as Specification records and referred with an "App ID". The records serve as a single point of truth for application information in your project. 
+To address the need for clear application identification Fiori Tracker keeps records of ["Content type: Application"](../../tracked/SPS03/apps.md). With the help of application ["FT Applications"](../../features/apps.md) you can store the records of all your Fiori launchpad enabled applications in scope. Application records are kept as Specification records and referred with an "App ID". The records serve as a single point of truth for application information in your project. 
 
 [![](res/app-ids.png)](res/app-ids.png)
 
