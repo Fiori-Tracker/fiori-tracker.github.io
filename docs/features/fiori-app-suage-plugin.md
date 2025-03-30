@@ -1,6 +1,6 @@
 # Fiori App Usage Plugin
 
-## Introduction
+## Overview
 
 Fiori App Usage Plugin is resposible for collecting and sending the usage information to Central system.
 

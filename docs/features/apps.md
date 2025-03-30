@@ -1,6 +1,6 @@
 # FT Applications
 
-## Introduction
+## Overview
 
 With the help of the application "FT Applications," you can store the records of all your Fiori launchpad-enabled applications. The list of all apps stored in "FT Applications" serves as a directory of all applications in the project scope. Application records are kept as [Specification records](../specification-records.md) and referred to with an "App ID." The records serve as a single point of truth for application information in your project (project's "SAP Fiori library"). A major benefit is having custom and extended app records in one central place.
 
