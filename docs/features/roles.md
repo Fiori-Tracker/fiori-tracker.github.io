@@ -1,4 +1,6 @@
-# Role List app
+# Roles
+
+## Overview
 
 The app keeps [Specification records](../specification-records.md) of the roles in scope. Role List app comes with two build-in relations: Specification catalogs and Specification applications. 
 
@@ -11,6 +13,7 @@ Application relation lists all apps linked to the catalogs linked with the role.
 [![](res/ro-apps.png)](res/ro-apps.png)
 
 There are four more relations available. You can activate them by configuring relations.
+
 1. Sign-offs
 2. Test users
 3. Change requests

@@ -12,7 +12,7 @@ nav:
   - Features: 
     - features/index.md
     - App usage report: features/usage-report.md
-    - App usage plugin: features/fiori-app-suage-plugin.md
+    - App usage plugin: features/fiori-app-usage-plugin.md
     - User usage report: features/user-usage-report.md
     - Usage log: features/usage-log.md
     - Fiori role testing: features/fiori-role-testing.md
