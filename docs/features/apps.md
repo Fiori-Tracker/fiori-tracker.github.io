@@ -1,12 +1,12 @@
 # FT Applications
 
-## Overview
+## How it works
 
-With the help of the application "FT Applications," you can store the records of all your Fiori launchpad-enabled applications. The list of all apps stored in "FT Applications" serves as a directory of all applications in the project scope. Application records are kept as [Specification records](../specification-records.md) and referred to with an "App ID." The records serve as a single point of truth for application information in your project (project's "SAP Fiori library"). A major benefit is having custom and extended app records in one central place.
+With the help of the application `FT Applications`, you can store the records of all your Fiori launchpad-enabled applications. The list of all apps stored in `FT Applications` serves as a directory of all applications in the project scope. Application records are kept as [Specification records](../specification-records.md) and referred to with an `App ID`. The records serve as a single point of truth for application information in your project (project's "SAP Fiori library"). A major benefit is having custom and extended app records in one central place.
 
 [![](res/apps.gif)](res/apps.gif)
 
-## Attributes of App Specification record
+### Attributes of App Specification record
 
 Fiori Tracker keeps the following attributes for an app entry:
 
@@ -21,7 +21,28 @@ Fiori Tracker keeps the following attributes for an app entry:
 | Created   | The date on which the application Specification entry was created.   It is the date of including the app in the project scope. |
 | Modified  | The date on which the user has changed the attributes of app.   |
 
-## Configuration
+### Specifying SAP Fiori launchpad applications
+
+To start working with Fiori Tracker, you need to specify all applications that you plan to enable in your SAP Fiori Launchpad. You do that with the `FT Applications` app. The app starts with the current list of all applications in your project scope.
+
+[![](res/list.png)](res/list.png)
+*Starting view of `FT Applications` app*
+
+With the “Add” function, you can add a new application entry:
+
+[![](res/add2.png)](res/add2.png)
+*Create an application record form in the `FT Applications` app*
+
+The recorded details include:
+
+- App ID – application prevents the creation of duplicates.
+- Tile title – The title might be different from the official application name.
+- Name – Contains the official application name.
+- Area – You can choose a functional area. The area comes from the configurable list of areas specific to your project.
+- Type – You can choose the type of application. The choice comes from the list of configurable types specific to your project. Fiori Tracker comes with predefined application types.
+- Technical catalog, Semantic object, action, and flags indicating if the app can start directly and if it is a lighthouse app are optional. They either serve as additional information, or you can use them after installing optional Fiori Tracker suite components.
+
+## How to configure it
 
 To configure Fiori Tracker core use SAP Gui transaction **ZFTADMIN**:
 
