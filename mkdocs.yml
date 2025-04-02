@@ -11,16 +11,15 @@ nav:
     - usecases/index.md
   - Features: 
     - features/index.md
-    - App usage report: features/usage-report.md
-    - App usage plugin: features/fiori-app-usage-plugin.md
-    - User usage report: features/user-usage-report.md
-    - Usage log: features/usage-log.md
-    - Fiori role testing: features/fiori-role-testing.md
+    - App Usage Report: features/usage-report.md
+    - App Usage Plugin: features/fiori-app-usage-plugin.md
+    - User Usage Report: features/user-usage-report.md
+    - Usage Log: features/usage-log.md
+    - Fiori Role Testing: features/fiori-role-testing.md
     - FT Applications: features/apps.md
     - FT Catalogs: features/cats.md
     - FT Roles: features/roles.md
     - Fiori Test Users: features/fiori-test-users.md
-    - Mapping apps to a catalog: features/mapping-apps-to-a-catalog.md
   - Explore Details: 
     - explore-fiori-tracker-details/index.md
     - Satisfied Interests and Roles: satisfied-interests-and-roles.md

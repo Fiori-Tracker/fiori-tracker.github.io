@@ -17,3 +17,17 @@ This feature lets you create documentation entries for your launchpad Business C
 
 The app uses the same functional area set to assign catalog and use Fiori Tracker reports on a specific stream or to assign stream default person responsible for sing-offs.
 
+### Mapping apps to a catalog
+
+You can maintain the mapping from the Catalog app where you can choose `Applications Specification` relation and `Edit`:
+
+[![](res/cat-apps.png)](res/cat-apps.png)
+*View with a chosen catalog record and its `Applications` relation in the `FT Catalogs` app*
+
+[![](res/map-apps.png)](res/map-apps.png)
+*Edit view for mapping application in `FT Catalogs` app*
+
+All marked apps get assigned to the catalog.<br>
+
+In the same way as for catalogs, the mapping function is available from an [application perspective](apps.md#mapping-apps-to-a-catalog).
+

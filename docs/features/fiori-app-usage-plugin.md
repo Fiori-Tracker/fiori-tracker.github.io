@@ -20,3 +20,5 @@ The table below describes all available parameters:
 | SYSTEM_ID       | **ID of a Managed system**  | This setting enables overwriting the real system ID to one set by the parameter         |
 | LOGMODE         | **FULL** | Plugin sends usage records only when this parameter is set to **FULL**. Delete this parameter to stop sending usage records. This allows stopping log sending without removing user's Fiori App Usage role.
 | TARGET_RFC      | **RFC name**      | RFC destination name of the Central system         |
+
+<span class="back-cover-separator-for-full-pdf"></span>
