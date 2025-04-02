@@ -42,7 +42,7 @@ The recorded details include:
 - Type – You can choose the type of application. The choice comes from the list of configurable types specific to your project. Fiori Tracker comes with predefined application types.
 - Technical catalog, Semantic object, action, and flags indicating if the app can start directly and if it is a lighthouse app are optional. They either serve as additional information, or you can use them after installing optional Fiori Tracker suite components.
 
-# Mapping apps to a catalog
+### Mapping apps to a catalog
 
 To maintain the mapping of an app choose `Catalog Specification` relation and `Edit`:
 
@@ -56,7 +56,7 @@ In the same way as for apps, the mapping function is available from an [catalog 
 
 ## How to configure it
 
-To configure Fiori Tracker core use SAP Gui transaction **ZFTADMIN**:
+To configure Fiori Tracker core use SAP Gui transaction `ZFTADMIN`:
 
 ![](res/zftadmin.png)
 
