@@ -1,6 +1,6 @@
 # Fiori Test Users
 
-## Overview
+## How it works
 
 The "Fiori Test Users" app lets you create, change, and list test user records. Test user records are linked directly with roles and indirectly with catalogs and apps.
 

@@ -1,6 +1,6 @@
 # Roles
 
-## Overview
+## How it works
 
 The app keeps [Specification records](../specification-records.md) of the roles in scope. Role List app comes with two build-in relations: Specification catalogs and Specification applications. 
 

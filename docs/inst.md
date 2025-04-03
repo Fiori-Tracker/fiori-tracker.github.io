@@ -4,7 +4,7 @@ description: 'Fiori Tracker offers flexible installation options for SAP landsca
 # Installation - General considerations
 
 
-## Overview
+## How it works
 
 To install Fiori Tracker you need to contact us to get the files. Together with the files you will receive the detailed installation guide. 
 

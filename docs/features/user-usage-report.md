@@ -1,6 +1,6 @@
 # User usage report
 
-## Overview
+## How it works
 
 The report shows user information on who accessed which SAP Fiori application, how many times.
  
