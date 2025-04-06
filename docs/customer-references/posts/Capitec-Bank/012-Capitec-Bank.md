@@ -8,6 +8,9 @@ industries:
 ---
 # Fiori Tracker enables Capitec Bank’s SAP GRC Team to optimize operations and project management
 
+[![Maersk](capitec-logo.svg)](https://www.capitecbank.co.za)
+{ class="excerpt-logo" }
+
 - Implemented and operated by: SAP Governance Risk and Compliance Team<br>
 - Monitored SAP landscape:  SAP S/4HANA 2020 Purchasing<br>
 <!-- more -->
