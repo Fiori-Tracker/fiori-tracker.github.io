@@ -49,75 +49,75 @@ Stay ahead with SAP S/4HANA [app usage insights](https://help.fioriappsusage.org
 
 <li markdown>
 <div class="nype-exploded-card-icon" markdown>
-  :material-scissors-cutting:
+:material-scissors-cutting:
 </div>
 <div class="nype-exploded-card-description" markdown>
-  <h2 markdown>__Optimizing SAP licenses__</h2>
+<h2 markdown>__Optimizing SAP licenses__</h2>
 <p markdown>
-  Matching SAP user licenses to real user needs
+Matching SAP user licenses to real user needs
 </p>
 <p markdown>
-  [:octicons-arrow-right-24: Cut SAP license costs ](usecases/posts/23-license-counting.md)
+[:octicons-arrow-right-24: Cut SAP license costs ](usecases/posts/23-license-counting.md)
 </p>
 </div>
 </li>
 
 <li markdown>
 <div class="nype-exploded-card-icon" markdown>
-  :material-arrow-collapse-all:
+:material-arrow-collapse-all:
 </div>
 <div class="nype-exploded-card-description" markdown>
-  <h2 markdown>__Project collaboration platform__</h2>
+<h2 markdown>__Project collaboration platform__</h2>
 <p markdown>
-  Self-service tool for all SAP S/4HANA project members: [Functional](for-functional-experts.md), Basis, Authorizations experts and Developers
+Self-service tool for all SAP S/4HANA project members: [Functional](for-functional-experts.md), Basis, Authorizations experts and Developers
 </p>
 <p markdown>
-  [:octicons-arrow-right-24: Satisfied Interests](satisfied-interests-and-roles.md)
+[:octicons-arrow-right-24: Satisfied Interests](satisfied-interests-and-roles.md)
 </p>
 </div>
 </li>
 
 <li markdown>
 <div class="nype-exploded-card-icon" markdown>
-  :material-crowd:
+:material-crowd:
 </div>
 <div class="nype-exploded-card-description" markdown>
-  <h2 markdown>__Single source of truth__</h2>
+<h2 markdown>__Single source of truth__</h2>
 <p markdown>
-  Your project scope definition and foundation for custom application documentation
+Your project scope definition and foundation for custom application documentation
 </p>
 <p markdown>
-  [:octicons-arrow-right-24: Reliable living docs](usecases/posts/requirements-gathering.md)
+[:octicons-arrow-right-24: Reliable living docs](usecases/posts/requirements-gathering.md)
 </p>
 </div>
 </li>
 
 <li markdown>
 <div class="nype-exploded-card-icon" markdown>
-  :ext-sap-logo-shape:
+:ext-sap-logo-shape:
 </div>
 <div class="nype-exploded-card-description" markdown>
-  <h2 markdown>__Hosted in your SAP landscape__</h2>
+<h2 markdown>__Hosted in your SAP landscape__</h2>
 <p markdown>
-  Comes as a native SAP Fiori app that you can install on any SAP system. Blueprint docs tied to actual SAP Fiori system config
+Comes as a native SAP Fiori app that you can install on any SAP system. Blueprint docs tied to actual SAP Fiori system config
 </p>
 <p markdown>
-  [:octicons-arrow-right-24: Deployment options](inst/dep.md)
+[:octicons-arrow-right-24: Deployment options](inst/dep.md)
 </p>
 </div>
 </li>
 
 <li markdown>
 <div class="nype-exploded-card-icon" markdown>
-  :material-clock-fast:
+:material-clock-fast:
 </div>
 <div class="nype-exploded-card-description" markdown>
-  <h2 markdown>__Set up in 1 day__</h2>
+<h2 markdown>__Set up in 1 day__</h2>
 <p markdown>
-  Import the transport requests and follow the guide. Compatible with all SAP S/4HANA releases.
+Import the transport requests and follow the guide. Compatible with all SAP S/4HANA releases.
 </p>
 <p markdown>
-  [:octicons-arrow-right-24: Installation](inst.md)
+[:octicons-arrow-right-24: Installation](inst.md)
 </p>
 </div>
 </li>
