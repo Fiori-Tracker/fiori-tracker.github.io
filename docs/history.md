@@ -46,5 +46,3 @@ Since its first release in 2018, we have continued to give our all to improving 
   content: Initial release of the suite.
 
 ::/timeline::
-
-<span class="back-cover-separator-for-full-pdf"></span>
