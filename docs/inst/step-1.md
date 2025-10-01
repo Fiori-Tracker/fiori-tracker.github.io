@@ -20,13 +20,14 @@ Recommended order:
 
 1. FT-Core.zip
 2. FAU-Report.zip
-3. FAU-plugin.zip
-4. FT-asisapimain.zip
-5. FT-asisapiconn.zip
-6. FT-Import.zip
-7. FT-users.zip
-8. FT-roles.zip
-9. FRT-Report.zip (Requires FT-roles.zip)
+3. FAU-Plugin.zip
+4. FAU-Users.zip
+5. FT-ASIS-Main.zip
+6. FT-ASIS-Connector.zip
+7. FT-Import.zip
+8. FT-Roles.zip
+9. FT-Users.zip (Requires FT-Roles.zip)
+10. FRT-Report.zip (Requires FT-Roles.zip)
 
 
 [![](res/stms.png)](res/stms.png)
