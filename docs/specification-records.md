@@ -16,6 +16,8 @@ Working with Specification records is particularly valuable during:
 
 2. While the support team resolves issues with systems. The team can use them to verify the expected system configuration.
 
+With Fiori Tracker, you can manage all your specification records through the [FT Applications app](features/apps.md))
+
 In addition to Specification records, Fiori Tracker suite leverages two more types of records: 
 
 1. ["As-is"](as-is.md)
