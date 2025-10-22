@@ -1,12 +1,12 @@
 ---
 title: Somfy - Customer reference
-description: With Fiori Tracker, Somfy Group gains clear insights that optimize app usage and simplify SAP management.
+description: Fiori Tracker allows Somfy Group to gain clear insights into app usage and simplify SAP management
 date: 2025-10-17
 slug: "Somfy"
 industries:
   - IoT-enabled Products
 ---
-# With Fiori Tracker, Somfy Group gains clear insights that optimize app usage and simplify SAP management.
+# Fiori Tracker allows Somfy Group to gain clear insights into app usage and simplify SAP management
 
 [![Somfy](somfy_logo.svg){align=right width="130"}](https://www.somfy-group.com/en-en/)
 { class="excerpt-logo" }
