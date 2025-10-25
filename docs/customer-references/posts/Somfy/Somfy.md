@@ -11,8 +11,8 @@ industries:
 [![Somfy](somfy_logo.svg){align=right width="130"}](https://www.somfy-group.com/en-en/)
 { class="excerpt-logo" }
 
-- Implemented and operated by: SAP Basis Team<br>
-- Monitored SAP landscape: SAP S/4HANA<br>
+- Implemented and operated by: Enterprise Core Solutions team<br>
+- Monitored SAP landscape: SAP S/4HANA 2020<br>
 <!-- more -->
 
 !!! quote " "
@@ -31,12 +31,12 @@ industries:
 At a glance: 
 
 - On SAP S/4HANA since August 2025 
+- SAP Fiori apps for: Supply Chain Execution, Source to Pay, Quote to Cash, Product & Technical data
 - Optimization SAP licenses
+- SAP Fiori app optimization before the upgrade to S/4HANA 2023
 
+About [Somfy](https://www.somfy-group.com/en-en/):
 
-About [Somfy](https://www.somfy-group.com/en-en/)
-
-- The world largest manufacturer of controllers and drives for entrance gates, garage doors, window blinds and awnings
-- Producer of other home automation products such as security devices
-- Connected 7,8 million devices and more than 890 700 homes at the end of 2019
+- World leader in home automation
+- 7000 employees, present in 59 countries, 8 production sites and 17 R&D centers
 - [https://www.somfy-group.com/](https://www.somfy-group.com/)
