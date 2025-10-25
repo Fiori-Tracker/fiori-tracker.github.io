@@ -11,8 +11,8 @@ industries:
 [![Somfy](somfy_logo.svg){align=right width="130"}](https://www.somfy-group.com/en-en/)
 { class="excerpt-logo" }
 
-- Implemented and operated by: SAP Business Application Software Integrated Solution<br>
-- Monitored SAP landscape: SAP S/4HANA for IoT-enabled Products<br>
+- Implemented and operated by: SAP Basis Team<br>
+- Monitored SAP landscape: SAP S/4HANA<br>
 <!-- more -->
 
 !!! quote " "
@@ -30,13 +30,13 @@ industries:
 
 At a glance: 
 
-- SAP S/4HANA dedicated IoT-enabled Products
+- On SAP S/4HANA since August 2025 
 - Optimization SAP licenses
-- Over 2,000 patents filed
-- Connected 7,8 million devices and more than 890 700 homes at the end of 2019
+
 
 About [Somfy](https://www.somfy-group.com/en-en/)
 
-- The world leader in automatic controls for openings and closures in homes and buildings
-- It offers a range of motorized solutions and control points and is a key player in smart home systems.
-- [https://www.somfy-group.com/en-en/](https://www.somfy-group.com/en-en/)
+- The world largest manufacturer of controllers and drives for entrance gates, garage doors, window blinds and awnings
+- Producer of other home automation products such as security devices
+- Connected 7,8 million devices and more than 890 700 homes at the end of 2019
+- [https://www.somfy-group.com/](https://www.somfy-group.com/)
