@@ -19,7 +19,7 @@ Below is the description of what we need:
 
     === "Example"
 
-        - 760 Fiori launchpad enabled applications
+        - 760 Fiori launchpad-enabled applications
         - 220 Catalogs
         - 150 Roles
         - 980 end-users
@@ -29,7 +29,7 @@ Below is the description of what we need:
     === "Details"
 
         - Main SAP product and its release number 
-        - Main business processes monitored wit this system
+        - Main business processes monitored with this system
         - Name of the team that is planning to operate Fiori Tracker 
         - Current phase of the project
 
@@ -58,11 +58,11 @@ Below is the description of what we need:
 
     === "Details"
 
-        We need first, last name and role in the SAP S/4HANA project and the contents of the testimonial. We can provide a prompt to make it super easy.
+        We need the first and last name, role in the SAP S/4HANA project, and the contents of the testimonial. We can provide a prompt to make it super easy.
 
     === "Example"
 
-        We plan to use Fiori Tracker Suite, for our migration from Standalone Gateway to Embedded Gateway. With Fiori Tracker, we aim to identify the most important apps and those that can be deprecated, simplifying the upgrade team's workload.
+        We plan to use Fiori Tracker Suite for our migration from Standalone Gateway to Embedded Gateway. With Fiori Tracker, we aim to identify the most important apps and those that can be deprecated, simplifying the upgrade team's workload.
 
         Post-migration, we will also focus on improving performance. Fiori Tracker will help us streamline our app portfolio, ensuring the embedded deployment runs faster and more efficiently. 
 
@@ -83,7 +83,7 @@ Below is the description of what we need:
     - If we get access to your system, we can install it for you
 
 6. You start using Fiori Tracker
-7. After one moth of use we would adopt the testimonial describing the feedback regarding actual experience with the tool
+7. After one month of use, we would adopt the testimonial describing the feedback regarding actual experience with the tool
 
 
 ## Example Customer reference article
