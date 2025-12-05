@@ -54,11 +54,16 @@ Below is the description of what we need:
         - Focus on performance improvements post-migration
         - Streamlining apps for faster deployment
 
-??? "4. A project member who can provide a testimonial on planned use cases."
+??? "4. Designated project representative for testimonial & photo"
 
     === "Details"
 
-        We need the first and last name, role in the SAP S/4HANA project, and the contents of the testimonial. We can provide a prompt to make it super easy.
+        To proceed, we require:
+
+        - Full name (first and last)
+        - Their position in the SAP S/4HANA project
+        - Written testimonial (a guided prompt can be supplied for convenience)
+        - A photograph of the project representative who provided the testimonial, taken in a its company-branded environment
 
     === "Example"
 
@@ -70,6 +75,9 @@ Below is the description of what we need:
         SAP Technology Platform<br>
         SAP Senior Solution Architect<br>
         Maersk<br>
+
+        [![](res/example-photo.jpg)](res/example-photo.jpg)
+
 
 ## Process steps
 
