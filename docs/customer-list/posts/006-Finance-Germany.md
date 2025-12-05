@@ -4,7 +4,7 @@ slug: "Finance-Germany"
 industries:
   - Finance
 ---
-# Fiance (Germany)
+# Finance (Germany)
 
 Implemented and operated by: SAP Developer Team<br>
 Systems: SAP S/4HANA 1909, 2021, directory of SAP Fiori launchpad enabled custom and extended applications
