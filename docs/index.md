@@ -37,7 +37,7 @@ Stay ahead with SAP S/4HANA [app usage insights](https://help.fioriappsusage.org
 
 <div style="padding: 0 1em; display: flex; align-items: center;" markdown>
 
-[Get an offer](offer.md){ .md-button .md-button--primary } [Get it for free](free-offer.md){ .md-button .md-button--primary } help us get exposure
+[Get an offer](offer.md){ .md-button .md-button--primary } 
 
 </div>
 </div>
