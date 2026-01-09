@@ -31,7 +31,7 @@ If an app does not have a [specification record](../specification-records.md), i
 
 For out-of-scope apps, the report shows only the Application name and Application ID.
 
-To fully identify an app and include it in the report, you must maintain its specification record. By doing so, you confirm that the app is part of the project scope and that you actively support and track it.
+To fully identify an app and include it in the report, you must maintain its specification record. By doing so, you confirm that the app is part of the project scope and that you support and track it.
 
 
 ###  Filtering
