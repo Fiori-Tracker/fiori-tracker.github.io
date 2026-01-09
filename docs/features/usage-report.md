@@ -27,7 +27,12 @@ The following app's details are propagated based on the [Specifications records]
 
 ### Out of scope applications
 
-If the app used has no [specification record](../specification-records.md), it will appear marked as “Not in scope” (the “In scope” flag will be empty). This flag helps you [control the scope](../usecases/posts/scope-control.md). In this case, the line in the report will contain only the fields: Application name, Application ID. To enable the app to be identified by its App ID and Application name, you need to maintain its specification records. Maintaining these records also indicates your decision to include the application in the project scope. From that point in time, you are consciously supporting this app and keeping records of it.
+If an app does not have a [specification record](../specification-records.md), it is marked as Not in scope (the In scope flag is empty). This helps you clearly see which apps are [outside your project scope](../usecases/posts/scope-control.md).
+
+For out-of-scope apps, the report shows only the Application name and Application ID.
+
+To fully identify an app and include it in the report, you must maintain its specification record. By doing so, you confirm that the app is part of the project scope and that you actively support and track it.
+
 
 ###  Filtering
 
