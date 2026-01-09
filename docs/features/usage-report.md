@@ -20,14 +20,14 @@ The list contains all apps that users started in the particular system. Each row
 * Total number of starts
 * In scope flag
 
-The following app's details are propagated based on the Specifications records kept and maintained in the Fiori Tracker app: [*FT Applications*](apps.md):
+The following app's details are propagated based on the [Specifications records](../specification-records.md) kept and maintained in the Fiori Tracker app: [*FT Applications*](apps.md):
 
 * Application name
 * Application ID
 
 ### Out of scope applications
 
-If the app used has no specification record, it will appear marked as “Not in scope” (the “In scope” flag will be empty).  This flag helps you [control the scope](../usecases/posts/scope-control.md). In this case, the line in the report will contain only the fields: Application name, Application ID. To enable the app to be identified by its App ID and Application name, you need to maintain its specification records. Maintaining these records also indicates your decision to include the application in the project scope. From that point in time, you are consciously supporting this app and keeping records of it.
+If the app used has no [specification record](../specification-records.md), it will appear marked as “Not in scope” (the “In scope” flag will be empty). This flag helps you [control the scope](../usecases/posts/scope-control.md). In this case, the line in the report will contain only the fields: Application name, Application ID. To enable the app to be identified by its App ID and Application name, you need to maintain its specification records. Maintaining these records also indicates your decision to include the application in the project scope. From that point in time, you are consciously supporting this app and keeping records of it.
 
 ##  Filtering
 
