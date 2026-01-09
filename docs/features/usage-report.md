@@ -1,10 +1,33 @@
 # App usage report
 
-## How it works
+# How it works
 
-Fiori Tracker provides an app listing the most frequently used applications in your system. The app list is displayed with unique app IDs for all apps, including extended and custom apps.
+The *App Usage Report* shows which Fiori apps are used most often in your system. It helps you quickly see which apps users open, how often they use them, and which apps are most important. Both standard and custom apps are included.
+
+## List of most frequently used apps
 
 [![Fiori App Usage screenshot](../res/fau-ss.png)](../res/fau-ss.png)
+
+The list contains all apps that users started in the particular system. Each row on the list represents the started app together with the following details:
+
+* System ID
+* Application name
+* Application ID
+* Semantic object 
+* Semantic action
+* Number of hits Today
+* Number of hists in the last calendar week
+* Total number of starts
+* In scope flag
+
+The following app's details are propagated based on the Specifications records kept and maintained in the Fiori Tracker app: [*FT Applications*](apps.md):
+
+* Application name
+* Application ID
+
+### Out of scope applications
+
+If the app used has no specification record, it will appear marked as “Not in scope” (the “In scope” flag will be empty).  This flag helps you [control the scope](../usecases/posts/scope-control.md). In this case, the line in the report will contain only the fields: Application name, Application ID. To enable the app to be identified by its App ID and Application name, you need to maintain its specification records. Maintaining these records also indicates your decision to include the application in the project scope. From that point in time, you are consciously supporting this app and keeping records of it.
 
 ##  Filtering
 
