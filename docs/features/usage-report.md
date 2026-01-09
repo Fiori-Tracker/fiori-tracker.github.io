@@ -29,7 +29,7 @@ The following app's details are propagated based on the [Specifications records]
 
 If the app used has no [specification record](../specification-records.md), it will appear marked as “Not in scope” (the “In scope” flag will be empty). This flag helps you [control the scope](../usecases/posts/scope-control.md). In this case, the line in the report will contain only the fields: Application name, Application ID. To enable the app to be identified by its App ID and Application name, you need to maintain its specification records. Maintaining these records also indicates your decision to include the application in the project scope. From that point in time, you are consciously supporting this app and keeping records of it.
 
-##  Filtering
+###  Filtering
 
 The report offers the following filters to allow you to categorize applications by functional area and application type, as well as identify applications outside the project's scope.
 
