@@ -1,4 +1,4 @@
-# Content type: Catalogs linked to Sigh-offs (Info record)
+# Content type: Catalogs linked to Sign-offs (Info record)
 
 For each Catalog, you can list all Sign-off records.
 

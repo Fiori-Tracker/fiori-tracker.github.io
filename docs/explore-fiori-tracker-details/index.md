@@ -8,7 +8,7 @@ Fiori Tracker shows SAP usage by individual application IDs and names. To give i
 Apart from usage logs The Master list of applications can be used to:
 
 1. Define and control the scope of SAP S/4HANA project
-2. [Link applications to other records](../tracked.md) like planed business catalogs, roles, test users
+2. [Link applications to other records](../tracked.md) like planned business catalogs, roles, test users
 
 
 

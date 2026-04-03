@@ -16,7 +16,7 @@ The list contains all apps that users started in the particular system. Each row
 * Semantic object 
 * Semantic action
 * Number of hits Today
-* Number of hists in the last calendar week
+* Number of hits in the last calendar week
 * Total number of starts
 * In scope flag
 
@@ -60,7 +60,7 @@ The function is available from the App Usage Admin app:
 
 ## Cleaning tool
 
-Old usage records can be removed with cleaning tool. The cleaning tool is available form Administration tool started with transaction **ZFACENADMIN**. To lunch the tool start the transaction and chose function *3. Clean old usage records*:
+Old usage records can be removed with cleaning tool. The cleaning tool is available from Administration tool started with transaction **ZFACENADMIN**. To launch the tool start the transaction and choose function *3. Clean old usage records*:
 
 [![](res/admin-tool.png)](res/admin-tool.png)
 
