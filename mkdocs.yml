@@ -252,7 +252,7 @@ extra:
       man: ' '
       rep: 'asis-cen'
       pay: 'free'
-      fnode: 'zftdc, zftsy'
+      fnode: 'zftcatsapprep, zftdc, zftsy'
       odata: 'ZNYPEASISCEN_SRV'
       ro: 'ZNYPE_ASISCEN'
     asisMan:
