@@ -231,7 +231,7 @@ extra:
   prod:  
     core:
       name: 'Fiori Tracker Core'
-      desc: 'Applications and Catalogs "To-be" records and their association'
+      desc: 'Applications and Catalogs Specification records and their association'
       nameshort: 'Core'
       main: '2020'
       latestrel: 'SPS03'
@@ -449,7 +449,7 @@ extra:
     ro:
       name: 'Fiori Tracker Roles'
       nameshort: 'Roles'
-      desc: 'Roles "To-be" records and their association to apps through catalogs'
+      desc: 'Roles Specification records and their association to apps through catalogs'
       main: '2020'
       latestrel: 'FPS01'
       cen: 'X'
@@ -462,7 +462,7 @@ extra:
     ci:
       name: 'Catalog Import'
       nameshort: 'Catalog Import'
-      desc: 'Lets you import catalogs from your system into the "To-be" catalogs list'
+      desc: 'Lets you import catalogs from your system into the Specification catalogs list'
       main: '2020'
       latestrel: 'SPS02'
       cen: 'X'
@@ -475,7 +475,7 @@ extra:
     ai:
       name: 'Application Import'
       nameshort: 'Apps Import'
-      desc: 'Lets you import applications from your system into the "To-be" application list'
+      desc: 'Lets you import applications from your system into the Specification application list'
       main: '2020'
       latestrel: 'FPS01'
       cen: 'X'
@@ -524,7 +524,7 @@ extra:
   comp:  
     core:
       name: 'Fiori Tracker Core'
-      desc: 'Applications and Catalogs "To-be" records and their association'
+      desc: 'Applications and Catalogs Specification records and their association'
       nameshort: 'Core'
       main: '2020'
       latestrel: 'SPS03'
@@ -750,7 +750,7 @@ extra:
     ro:
       name: 'Fiori Tracker Roles'
       nameshort: 'Roles'
-      desc: 'Roles "To-be" records and their association to apps through catalogs'
+      desc: 'Roles Specification records and their association to apps through catalogs'
       main: '2020'
       latestrel: 'FPS01'
       cen: 'X'
@@ -763,7 +763,7 @@ extra:
     ci:
       name: 'Catalog Import'
       nameshort: 'Catalog Import'
-      desc: 'Lets you import catalogs from your system into the "To-be" catalogs list'
+      desc: 'Lets you import catalogs from your system into the Specification catalogs list'
       main: '2020'
       latestrel: 'SPS02'
       cen: 'X'
@@ -776,7 +776,7 @@ extra:
     ai:
       name: 'Application Import'
       nameshort: 'Apps Import'
-      desc: 'Lets you import applications from your system into the "To-be" application list'
+      desc: 'Lets you import applications from your system into the Specification application list'
       main: '2020'
       latestrel: 'FPS01'
       cen: 'X'
