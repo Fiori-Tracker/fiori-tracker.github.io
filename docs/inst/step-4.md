@@ -10,3 +10,9 @@ Go to transaction *SU01* and assign the `Role` to all users who should access th
 !!! Note
 
     If roles are missing, make sure you specified the target client when importing Fiori Tracker transports. Without it, client-specific roles won’t import.
+
+See also:
+
+[Authorizations roles summary](roles.md)
+
+[Apps with their technical components - check list](check-list.md)
