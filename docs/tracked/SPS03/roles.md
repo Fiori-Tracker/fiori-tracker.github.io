@@ -8,7 +8,7 @@ Fiori Tracker can keep records of all your roles.
 
 The entries for Roles can serve as a reference for role-related content types. The content you can list with the role are:
 
-| [Specification](../../specification-records.md) | Info records|
+| [Specification](../../specification-records.md) | [Info records](../../info-records.md)|
 |-|-|
 | [Applications](role-apps.md)
 | [Catalogs](role-cats.md)

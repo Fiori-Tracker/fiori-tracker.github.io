@@ -1,6 +1,6 @@
 # Gover 
 
-Gover is a solution that enables security checks for your SAP system landscape. The solution uses Fiori Tracker's As-is API. 
+Gover is a solution that enables security checks for your SAP system landscape. The solution uses Fiori Tracker's [As-is](../../as-is.md) API. 
 
 Gover with three security checks:
 
