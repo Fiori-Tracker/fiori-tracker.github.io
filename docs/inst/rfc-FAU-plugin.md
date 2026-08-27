@@ -8,7 +8,7 @@ graph LR
 ```
 
 Create an RFC destination in your Managed system using SAP GUI transaction `SM59`. 
-The RFC destination needs to set a user of type `SYSTEM` and the user needs to have the following authorizations in the Managed system:
+The RFC destination needs to set a user of type `SYSTEM` and the user needs to have the following authorizations in the Central system:
 
 Authorization object: `S_RFC`
 
