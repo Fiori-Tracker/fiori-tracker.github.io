@@ -5,11 +5,11 @@ site_description: 'Fiori Tracker simplifies SAP Fiori app management. Centralize
 nav:
   - Customer references:
     - customer-references/index.md
-  - Customer list: 
+  - Customer list:
     - customer-list/index.md
   - Use cases:
     - usecases/index.md
-  - Features: 
+  - Features:
     - features/index.md
     - App Usage Report: features/usage-report.md
     - App Usage Plugin: features/fiori-app-usage-plugin.md
@@ -20,7 +20,7 @@ nav:
     - FT Catalogs: features/cats.md
     - FT Roles: features/roles.md
     - Fiori Test Users: features/fiori-test-users.md
-  - Explore Details: 
+  - Explore Details:
     - explore-fiori-tracker-details/index.md
     - Satisfied Interests and Roles: satisfied-interests-and-roles.md
     - Tracked content: tracked.md
@@ -28,12 +28,12 @@ nav:
     - Frequently Asked Questions: faq.md
     - Installation: inst.md
     - Support: support.md
-    - Philosophy: philosophy.md  
+    - Philosophy: philosophy.md
     - History: history.md
-  - Executive Summary: 
+  - Executive Summary:
     - executive-summary/index.md
     - Satisfied Interests and Roles: satisfied-interests-and-roles.md
-    - Philosophy: philosophy.md  
+    - Philosophy: philosophy.md
     - History: history.md
 
 # Explicitly confirm there is awareness of files not in nav
@@ -77,7 +77,7 @@ validation:
     anchors: warn
     absolute_links: warn  # If needed change to 'relative_to_docs'
     unrecognized_links: warn
-theme: 
+theme:
   name: nype
   favicon: favicon.ico
   logo: 'assets/images/logo.png'
@@ -100,6 +100,7 @@ extra_javascript:
 markdown_extensions:
   - admonition
   - pymdownx.superfences
+  - pymdownx.fancylists
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.details
@@ -180,7 +181,7 @@ plugins:
         background_color: "#0d0d72"  # same color as the corner in the social_logo.png
   - redirects:
       # file redirects return a status 200 code, but redirect the page via <head> tags
-      # keep it for a few weeks to see if the online search results will change or if we 
+      # keep it for a few weeks to see if the online search results will change or if we
       # have to only use the 404.html page + JavaScript approach, even though robots don't run JS
       redirect_maps:
         '1909FPS03/index.md': 'index.md'
@@ -215,7 +216,7 @@ copyright: Copyright &copy; {year} Nype
 extra:
   analytics:
     provider: google
-    property: G-3SXC9PW73K 
+    property: G-3SXC9PW73K
   social:
     - icon: ext/nype-logo
       link: https://npe.cm/?ref=fioritracker
@@ -227,8 +228,8 @@ extra:
       link: https://www.youtube.com/@fioritracker
     - icon: fontawesome/brands/discord
       link: https://npe.cm/discord
-      
-  prod:  
+
+  prod:
     core:
       name: 'Fiori Tracker Core'
       desc: 'Applications and Catalogs Specification records and their association'
@@ -271,7 +272,7 @@ extra:
       cen: 'X'
       man: ' '
       rep: 'catapprep'
-      pay: 'free'  
+      pay: 'free'
       fnode: 'zftca'
       odata: 'ZNYPECA_SRV'
       ro: 'ZNYPE_CAMAN'
@@ -367,7 +368,7 @@ extra:
       pay: 'free'
       fnode: 'zftch'
       odata: 'ZNYPECH_SRV'
-      ro: 'ZNYPE_CHMAN'      
+      ro: 'ZNYPE_CHMAN'
     RelCh:
       name: 'FT Apps and Catalogs Relation: Change Requests'
       desc: 'The Change Request relation shows a list of change requests linked to an application or catalog.'
@@ -376,7 +377,7 @@ extra:
       cen: 'X'
       man: ' '
       rep: 'ch'
-      pay: 'free'  
+      pay: 'free'
     so:
       name: 'Sign-offs'
       desc: 'The Sign-offs app lets you create, change and list sign-offs records linked to all content types (apps, catalogs and roles)'
@@ -388,7 +389,7 @@ extra:
       pay: 'free'
       fnode: 'zftso'
       odata: 'ZNYPESO_SRV'
-      ro: 'ZNYPE_SOMAN'      
+      ro: 'ZNYPE_SOMAN'
     tu:
       name: 'Test users'
       nameshort: 'Test users'
@@ -410,7 +411,7 @@ extra:
       cen: 'X'
       man: ' '
       rep: 'tu'
-      pay: 'free'      
+      pay: 'free'
     hi:
       name: 'History'
       nameshort: 'History'
@@ -471,7 +472,7 @@ extra:
       pay: 'paid'
       fnode: 'zftci'
       odata: 'ZNYPECI_SRV'
-      ro: 'ZNYPE_CIMAN'      
+      ro: 'ZNYPE_CIMAN'
     ai:
       name: 'Application Import'
       nameshort: 'Apps Import'
@@ -519,9 +520,9 @@ extra:
       pay: 'paid'
       fnode: 'zftgv'
       odata: 'ZNYPEGV_SRV'
-      ro: 'ZNYPE_GVMAN'      
+      ro: 'ZNYPE_GVMAN'
 
-  comp:  
+  comp:
     core:
       name: 'Fiori Tracker Core'
       desc: 'Applications and Catalogs Specification records and their association'
@@ -568,7 +569,7 @@ extra:
       cen: 'X'
       man: ' '
       rep: 'catapprep'
-      pay: 'free'  
+      pay: 'free'
       fnode: 'zftca'
       odata: 'ZNYPECA_SRV'
       ro: 'ZNYPE_CAMAN'
@@ -668,7 +669,7 @@ extra:
       pay: 'free'
       fnode: 'zftch'
       odata: 'ZNYPECH_SRV'
-      ro: 'ZNYPE_CHMAN'      
+      ro: 'ZNYPE_CHMAN'
     RelCh:
       name: 'FT Apps and Catalogs Relation: Change Requests'
       desc: 'The Change Request relation shows a list of change requests linked to an application or catalog.'
@@ -677,7 +678,7 @@ extra:
       cen: 'X'
       man: ' '
       rep: 'ch'
-      pay: 'free'  
+      pay: 'free'
     so:
       name: 'Sign-offs'
       desc: 'The Sign-offs app lets you create, change and list sign-offs records linked to all content types (apps, catalogs and roles)'
@@ -689,7 +690,7 @@ extra:
       pay: 'free'
       fnode: 'zftso'
       odata: 'ZNYPESO_SRV'
-      ro: 'ZNYPE_SOMAN'      
+      ro: 'ZNYPE_SOMAN'
     tu:
       name: 'Test users'
       nameshort: 'Test users'
@@ -711,7 +712,7 @@ extra:
       cen: 'X'
       man: ' '
       rep: 'tu'
-      pay: 'free'      
+      pay: 'free'
     hi:
       name: 'History'
       nameshort: 'History'
@@ -772,7 +773,7 @@ extra:
       pay: 'paid'
       fnode: 'zftci'
       odata: 'ZNYPECI_SRV'
-      ro: 'ZNYPE_CIMAN'      
+      ro: 'ZNYPE_CIMAN'
     ai:
       name: 'Application Import'
       nameshort: 'Apps Import'
@@ -820,4 +821,4 @@ extra:
       pay: 'paid'
       fnode: 'zftgv'
       odata: 'ZNYPEGV_SRV'
-      ro: 'ZNYPE_GVMAN'      
+      ro: 'ZNYPE_GVMAN'

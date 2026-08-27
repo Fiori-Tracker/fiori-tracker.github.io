@@ -1,10 +1,16 @@
-# How to prepare the RFC destinations for Managed systems
+# How to prepare the RFC destination pointing from Central system to Managed system
 
-You will need RFC destinations for each system that you plan to manage with Fiori Tracker apps. Please set RFC destinations In your Central system using transaction *sm59*. Each RFC destination should point to one of your managed systems.
+On the Central system you need to create an RFC destination pointing to your Managed system.
 
-The user set in RFC destination needs to have type SYSTEM and the following authorizations:
+```mermaid
+graph LR
+    A1["Managed system S4Q"] -- RFC --> B2["Central system S4P"]
+```
 
-Authorization object: S_RFC
+Create an RFC destination for each of your Managed systems in your Central system using SAP GUI transaction `SM59`. 
+The RFC destination needs to set a user of type `SYSTEM` and the user needs to have the following authorizations in the Central system:
+
+Authorization object: `S_RFC`
 
 |Field|Value|
 |--|--|
@@ -17,3 +23,7 @@ Authorization object: S_RFC
 |ACTVT| 16|
 |RFC_TYPE| FUNC|
 |RFC_NAME| Z_NYPEASISMAN_GET_CATALOGS, Z_NYPEASISMAN_GET_APPLICATIONS, Z_NYPEASIS_MAN_GET_VERSION, RFC_PING, FUNCTION_EXISTS|
+
+See also:
+
+- [How to prepare the RFC destination pointing from Managed system to Central system](rfc-FAU-plugin.md)
