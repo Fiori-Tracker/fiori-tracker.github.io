@@ -211,6 +211,7 @@ plugins:
         /nr/m003: https://fioritracker.org/inst/step-3/
         /nr/m004: https://fioritracker.org/inst/step-4/
         /nr/m005: https://fioritracker.org/ui5lib-options/
+        /nr/m006: https://fioritracker.org/specification-records/
 
 copyright: Copyright &copy; {year} Nype
 extra:
