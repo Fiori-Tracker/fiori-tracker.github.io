@@ -18,6 +18,12 @@ Authorization object: `S_RFC`
 |RFC_TYPE| FUGR|
 |RFC_NAME| ZNYPEFACEN|
 
+|Field|Value|
+|--|--|
+|ACTVT| 16|
+|RFC_TYPE| FUNC|
+|RFC_NAME| Z_NYPEFACEN_LOG_APP_USAGE|
+
 See also:
 
 - [How to prepare the RFC destination pointing from Central system to Managed system](rfc.md)
