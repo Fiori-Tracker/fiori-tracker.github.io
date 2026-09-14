@@ -212,7 +212,7 @@ plugins:
         /nr/m004: https://fioritracker.org/inst/step-4/
         /nr/m005: https://fioritracker.org/ui5lib-options/
         /nr/m006: https://fioritracker.org/specification-records/
-        /features/records-export/: https://fioritracker.org/features/usage-report/#records-export
+        /features/records-export/?: https://fioritracker.org/features/usage-report/#records-export
 
 copyright: Copyright &copy; {year} Nype
 extra:
